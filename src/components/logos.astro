@@ -1,18 +1,25 @@
 ---
-// @ts-ignore
-import { Icon } from "astro-icon/components";
+// PartnersSection.astro
+const partners = [
+  { src: '/alliance/alliance1.png', alt: 'Partner 1' },
+  { src: '/alliance/alliance2.png', alt: 'Partner 2' },
+  { src: '/alliance/alliance3.png', alt: 'Partner 3' },
+  { src: '/alliance/alliance4.png', alt: 'Partner 4' },
+  { src: '/alliance/alliance5.png', alt: 'Partner 5' },
+  { src: '/alliance/alliance6.png', alt: 'Partner 6' },
+];
 ---
 
-<div class="mt-24">
-  <h2 class="text-center text-slate-500">Works with your technologies</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-
-    <Icon class="size-8 md:size-12" name="simple-icons:react" />
-    <Icon class="size-8 md:size-12" name="simple-icons:svelte" />
-    <Icon class="size-8 md:size-12" name="simple-icons:astro" />
-    <Icon class="size-8 md:size-16" name="simple-icons:tailwindcss" />
-    <Icon class="size-8 md:size-16" name="simple-icons:alpinedotjs" />
-    <Icon class="size-8 md:size-12" name="simple-icons:vercel" />
-
+<section class="bg-white py-12">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">OUR PARTNERS</h2>
+    <p class="text-lg text-gray-600 mb-8">Joining hands with the top leaders in the industry</p>
+    <div class="flex flex-wrap justify-center">
+      {partners.map((partner) => (
+        <div class="ml-10">
+          <img src={partner.src} alt={partner.alt} class="h-20 w-20"/>
+        </div>
+      ))}
+    </div>
   </div>
-</div>
+</section>

@@ -7,24 +7,22 @@ import Logos from "@components/logos.astro";
 import ServingBharat from "@components/servingBharat.astro";
 import Layout from "@layouts/Layout.astro";
 import ProjectsGrid from "@components/projectsGrid.astro";
-
+import NavySection from '../components/navySection.astro';
 ---
 
 <html>
   <head>
     <title>Astro with Tailwind CSS</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <Layout title="">
-      <Container>
         <Hero />
         <ServingBharat />
-    <ProjectsGrid />
-        <Features />
+        <NavySection />
+        <ProjectsGrid />
         <Logos />
-        <Cta />
-      </Container>
     </Layout>
   </body>
 </html>

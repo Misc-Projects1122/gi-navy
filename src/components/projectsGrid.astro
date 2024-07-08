@@ -1,24 +1,36 @@
 ---
+// NavySection.astro
+import NavyCard from './navyCard.astro';
+
+const cards = [
+  {
+    image: '/boat1.png',
+    title:"Habitability for INS Vikrant",
+    description: 'GI’s habitat expertise enabled the Indian Navy to ensure the best accommodation in the flagship aircraft carrier INS Vikrant, thus enhancing their operational capabilities by ensuring utmost safety and comfort for the crew.',
+    link: '#',
+  },
+  {
+    image: '/boat2.png',
+    title: 'Critical structures for Naval Support Vessels',
+    description: "GI's helideck expertise enabled Hindustan Shipyard to equip cutting-edge Nistar class Diving Support Vessels with lightweight decks, enhancing Indian Navy flight operations across diverse environments.",
+    link: '#',
+  },
+  {
+    image: '/boat1.png',
+    title: "Engineering Solutions",
+    description: 'GI’s proficiency in naval design and engineering has empowered us to successfully execute numerous complex projects across various sectors for the Indian Navy.',
+    link: '#',
+  },
+];
 ---
 
-<section class="bg-[#FFFCF4] p-8">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl text-gray-800 mb-8">Finding elegant solutions to complex challenges</h2>
-    <div class="flex justify-center gap-0">
-      <div class="relative group" style="max-width: 500px;">
-        <img src="/boat1.png" alt="Habitability for INS Vikrant" class="rounded-l-lg w-full">
-        <div class="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <a href="#" class="text-white border border-white py-2 px-4 rounded">Learn More</a>
-        </div>
-        <p class="absolute bottom-4 left-4 text-white text-lg group-hover:text-xl transition-all duration-300">Habitability for INS Vikrant</p>
-      </div>
-      <div class="relative group" style="max-width: 500px;">
-        <img src="/boat2.png" alt="Helideck for Naval Support Vessels" class="rounded-r-lg w-full">
-        <div class="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <a href="#" class="text-white border border-white py-2 px-4 rounded">Learn More</a>
-        </div>
-        <p class="absolute bottom-4 left-4 text-white text-lg group-hover:text-xl transition-all duration-300">Helideck for Naval Support Vessels</p>
-      </div>
+<section class="bg-[#FFFCF4] py-8">
+  <div class="max-w-6xl text-center">
+    <h2 class="text-4xl text-gray-800 mb-8">Finding <span class="text-blue-500">elegant solutions</span> to complex challenges</h2>
+    <div class="flex w-[100vw]">
+      {cards.map(card => (
+        <NavyCard {...card} />
+      ))}
     </div>
   </div>
 </section>

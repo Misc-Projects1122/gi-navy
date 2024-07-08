@@ -1,53 +1,43 @@
 ---
-import { Picture } from "astro:assets";
-import heroImage from "assets/hero.png";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
+// HeroBanner.astro
+const images = [
+  '/images/image1.jpg',  // replace with your actual image paths
+  '/images/image2.jpg',
+];
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
+<div class="relative h-screen">
+  <div id="hero-banner" class="absolute inset-0">
+    <img src={images[0]} alt="Hero Image" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" />
   </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
-      create any website with this starter.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-         Download for Free
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
-      </Link>
+  <div class="absolute inset-0 bg-black opacity-60"></div>
+  <div class="absolute inset-0 flex items-center justify-start px-8 md:px-16">
+    <div class="text-white max-w-2xl">
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        Pioneering Engineering, Delivering Excellence
+      </h1>
+      <p class="mt-4 text-base md:text-lg lg:text-xl leading-relaxed">
+        Mission-driven, customer-centric, multi-domain maritime solutions using cutting-edge technologies to envision and safeguard the fleet of the future.
+      </p>
+      <div class="mt-8 space-x-4">
+        <a href="#" class="bg-white text-black px-6 py-3 rounded-md text-lg inline-block">Learn More</a>
+        <a href="#" class="bg-blue-500 text-white px-6 py-3 rounded-md text-lg inline-block">Contact Us</a>
+      </div>
     </div>
   </div>
-</main>
+</div>
+
+<script>
+  const images = [
+    '/hero/heroBanner1.png',  // replace with your actual image paths
+    '/hero/heroBanner2.png',
+  ];
+
+  let currentImageIndex = 0;
+
+  setInterval(() => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    const heroBanner = document.getElementById('hero-banner');
+    heroBanner.innerHTML = `<img src="${images[currentImageIndex]}" alt="Hero Image" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" />`;
+  }, 3000); // Change image every 3 seconds
+</script>
