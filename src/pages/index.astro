@@ -4,14 +4,27 @@ import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
+import ServingBharat from "@components/servingBharat.astro";
 import Layout from "@layouts/Layout.astro";
+import ProjectsGrid from "@components/projectsGrid.astro";
+
 ---
 
-<Layout title="">
-  <Container>
-    <Hero />
-    <Features />
-    <Logos />
-    <Cta />
-  </Container>
-</Layout>
+<html>
+  <head>
+    <title>Astro with Tailwind CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Layout title="">
+      <Container>
+        <Hero />
+        <ServingBharat />
+    <ProjectsGrid />
+        <Features />
+        <Logos />
+        <Cta />
+      </Container>
+    </Layout>
+  </body>
+</html>
