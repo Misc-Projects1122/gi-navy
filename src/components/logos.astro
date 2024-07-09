@@ -12,12 +12,12 @@ const partners = [
 
 <section class="bg-white py-12">
   <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4">OUR PARTNERS</h2>
+    <h2 class="text-4xl  mb-4 font-barlow">OUR PARTNERS</h2>
     <p class="text-lg text-gray-600 mb-8">Joining hands with the top leaders in the industry</p>
-    <div class="flex flex-wrap justify-center">
+    <div class="flex flex-wrap justify-center items-center gap-8">
       {partners.map((partner) => (
-        <div class="ml-10">
-          <img src={partner.src} alt={partner.alt} class="h-20 w-20"/>
+        <div class="flex justify-center items-center">
+          <img src={partner.src} alt={partner.alt} class="h-20"/>
         </div>
       ))}
     </div>
