@@ -1,14 +1,14 @@
 ---
 // HeroBanner.astro
-  const images = [
-    '/hero/heroBanner1.png', 
-    '/hero/heroBanner2.png',
-  ];
 ---
 
 <div class="relative h-screen">
   <div id="hero-banner" class="absolute inset-0">
-    <img src={images[0]} alt="Hero Image" class="w-full h-full object-cover transition-opacity duration-4000 ease-in-out" />
+    <img
+      src="/hero/heroBanner1.png"
+      alt="Hero Image"
+      class="w-full h-full object-cover transition-opacity duration-4000 ease-in-out"
+    />
   </div>
   <div class="absolute inset-0 bg-black opacity-60"></div>
   <div class="absolute inset-0 flex items-center justify-start px-8 md:px-16">
@@ -17,29 +17,33 @@
         Pioneering Engineering, Delivering Excellence
       </h1>
       <p class="mt-4 text-base md:text-lg lg:text-xl leading-relaxed">
-        Mission-driven, customer-centric, multi-domain maritime solutions using cutting-edge technologies to envision and safeguard the fleet of the future.
+        Mission-driven, customer-centric, multi-domain maritime solutions using
+        cutting-edge technologies to envision and safeguard the fleet of the
+        future.
       </p>
       <div class="mt-8 space-x-4">
- <a
-    class="text-white border-2 border-white px-6 py-3 text-lg inline-block">
-    Learn More
-  </a>        <a href="#" class="bg-blue-500 text-white px-6 py-3 text-lg inline-block">Contact Us</a>
+        <a
+          class="text-white border-2 border-white px-6 py-3 text-lg inline-block">
+          Learn More
+        </a>
+        <a
+          href="#"
+          class="bg-blue-500 text-white px-6 py-3 text-lg inline-block"
+          >Contact Us</a
+        >
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  const images = [
-    '/hero/heroBanner1.png', 
-    '/hero/heroBanner2.png',
-  ];
+  const images = ["/hero/heroBanner1.png", "/hero/heroBanner2.png"];
 
   let currentImageIndex = 0;
 
   setInterval(() => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
-    const heroBanner = document.getElementById('hero-banner');
+    const heroBanner = document.getElementById("hero-banner");
     heroBanner.innerHTML = `<img src="${images[currentImageIndex]}" alt="Hero Image" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" />`;
   }, 4000); // Change image every 4 seconds
 </script>

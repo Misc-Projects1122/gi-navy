@@ -1,0 +1,12 @@
+---
+const { imgSrc, altText, title, desc, bgColor, textColor, descColor } =
+  Astro.props;
+---
+
+<div>
+  <img src={imgSrc} alt={altText} class="w-full h-auto object-cover" />
+  <div class={`${bgColor} p-4 ${descColor}`}>
+    <h2 class={`text-lg font-semibold ${textColor}`}>{title}</h2>
+    <p class="text-sm">{desc}</p>
+  </div>
+</div>
