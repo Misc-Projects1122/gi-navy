@@ -1,6 +1,6 @@
 export const cards = [
   {
-    imgSrc: "/src/assets/solutions1.png",
+    imgSrc: "/assets/solutions1.png",
     altText: "INS Jyoti",
     title: "INS Jyoti",
     desc: "Komandarm Fedko class fleet replenishment oiler",
@@ -9,7 +9,7 @@ export const cards = [
     descColor: "text-white",
   },
   {
-    imgSrc: "/src/assets/solutions2.png",
+    imgSrc: "/assets/solutions2.png",
     altText: "INS Beas",
     title: "INS Beas",
     desc: "Bhahmaputra class frigate",
@@ -18,7 +18,7 @@ export const cards = [
     descColor: "text-background",
   },
   {
-    imgSrc: "/src/assets/solutions3.png",
+    imgSrc: "/assets/solutions3.png",
     altText: "INS Nireekshak",
     title: "INS Nireekshak",
     desc: "Diving support vessel",
@@ -27,7 +27,7 @@ export const cards = [
     descColor: "text-white",
   },
   {
-    imgSrc: "/src/assets/solutions4.png",
+    imgSrc: "/assets/solutions4.png",
     altText: "MT Swarna Kalash",
     title: "MT Swarna Kalash",
     desc: "Oil products tanker",
@@ -36,7 +36,7 @@ export const cards = [
     descColor: "text-background",
   },
   {
-    imgSrc: "/src/assets/solutions5.png",
+    imgSrc: "/assets/solutions5.png",
     altText: "INS Tarangini and INS Sudarshini",
     title: "INS Tarangini and INS Sudarshini",
     desc: "Sail training ship",
@@ -45,7 +45,7 @@ export const cards = [
     descColor: "text-white",
   },
   {
-    imgSrc: "/src/assets/solutions6.png",
+    imgSrc: "/assets/solutions6.png",
     altText: "MV Arabian Sea",
     title: "MV Arabian Sea",
     desc: "General passenger/cargo ship",
