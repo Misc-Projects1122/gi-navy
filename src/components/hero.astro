@@ -2,18 +2,20 @@
 // HeroBanner.astro
 ---
 
-<div class="relative h-screen">
-  <div id="hero-banner" class="absolute inset-0">
+<div class="md:relative md:h-screen">
+  <div id="hero-banner" class="md:absolute inset-0">
     <img
       src="/hero/heroBanner1.png"
       alt="Hero Image"
       class="w-full h-full object-cover transition-opacity duration-4000 ease-in-out"
     />
   </div>
-  <div class="absolute inset-0 bg-black opacity-60"></div>
-  <div class="absolute inset-0 flex items-center justify-start px-8 md:px-16">
-    <div class="text-white max-w-2xl">
-      <h1 class="text-3xl md:text-5xl lg:text-6xl leading-tight font-barlow">
+  <div class="md:absolute inset-0 bg-black opacity-60"></div>
+  <div class="md:absolute inset-0 flex items-center justify-start md:px-16">
+    <div
+      class="text-white text-center md:text-left py-4 md:py-0 px-7 md:px-0 bg-dark md:bg-transparent max-w-2xl">
+      <h1
+        class="text-md font-bold md:text-5xl lg:text-6xl leading-tight font-barlow">
         Pioneering Engineering, Delivering Excellence
       </h1>
       <p class="mt-4 text-base md:text-lg lg:text-xl leading-relaxed">
@@ -23,12 +25,12 @@
       </p>
       <div class="mt-8 space-x-4">
         <a
-          class="text-white border-2 border-white px-6 py-3 text-lg inline-block">
+          class="text-white border-2 border-white px-3 md:px-6 py-2 md:py-3 text-md md:text-lg inline-block">
           Learn More
         </a>
         <a
           href="#"
-          class="bg-blue-500 text-white px-6 py-3 text-lg inline-block"
+          class="bg-blue-500 text-white px-3 md:px-6 py-2 md:py-3 text-md md:text-lg inline-block"
           >Contact Us</a
         >
       </div>

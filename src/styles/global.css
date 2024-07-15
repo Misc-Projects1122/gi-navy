@@ -1,7 +1,13 @@
+@import "./custom.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   @apply font-sans;
+}
+
+.h-revert-layer {
+  height: revert-layer;
 }

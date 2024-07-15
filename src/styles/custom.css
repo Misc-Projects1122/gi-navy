@@ -1,0 +1,13 @@
+.half-border-top {
+  position: relative;
+}
+
+.half-border-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 1px;
+  background: red;
+}
