@@ -1,26 +1,41 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import CriticalItem from "screens/what-we-do/critical-structures/criticalItem.astro";
+import { criticalItemCards } from "screens/what-we-do/cards";
+import type { ActionError, ActionInputError } from "astro:actions";
 ---
 
 <Layout title="">
   <body class="text-gray-900">
     <!-- Starting image -->
-    <img
-      src="/src/assets/critical-structures.png"
-      alt="Customized Habitat Design"
-      class="h-full w-full"
-    />
+    <div class="border-y-4 border-primary">
+      <div class="bg-background py-3 pl-12 text-white flex">
+        <a href="/"><span>Home </span></a><img
+          src="/src/assets/keyboard-arrow-right.svg"
+          class="w-6"
+        /><span>What we do </span><img
+          src="/src/assets/keyboard-arrow-right.svg"
+          class="w-6"
+        />
+        <span class="text-primary">Critical Structures</span>
+      </div>
+      <img
+        src="/src/assets/critical-structures.png"
+        alt="Customized Habitat Design"
+        class="h-full w-full"
+      />
+    </div>
 
     <!-- pioneers in -->
-    <div class="max-w-3xl mx-auto p-6 space-y-8">
-      <div class="text-4xl font-bold flex justify-center">
+    <div class="max-w-3xl mx-auto p-6 space-y-8 mt-8 mb-9">
+      <div class="text-4xl font-md flex justify-center">
         <div>Pioneers in</div>
         <div class="ml-2 text-[#007BC7]">Critical Structures</div>
       </div>
 
       <p class="text-lg text-justify">
         GI is your premier partner in advancing naval operations through the <span
-          class="text-[#007BC7] font-semibold"
+          class="text-[#007BC7] font-md"
           >design, fabrication, and installation of critical structures,
           particularly helidecks,</span
         > tailored to meet the rigorous demands of modern naval vessels. As a trusted
@@ -31,7 +46,7 @@ import Layout from "@layouts/Layout.astro";
 
       <p class="text-lg text-justify">
         Our commitment to
-        <span class="text-[#007BC7] font-semibold">
+        <span class="text-[#007BC7] font-md">
           precision engineering, uncompromising quality, and unwavering
           dedication to customer satisfaction</span
         > sets us apart as the preferred choice for designing, fabricating, and installing
@@ -41,92 +56,106 @@ import Layout from "@layouts/Layout.astro";
     </div>
 
     <!-- why GI for critical structures -->
-    <div class="container mx-auto py-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img
-            src="/src/assets/structure1.png"
-            alt="Expert Design Capabilities"
-            class="h-48 w-full object-cover rounded-t-lg"
-          />
-          <h2 class="text-xl font-semibold mt-4">Expert Design Capabilities</h2>
-          <p class="mt-2 text-gray-600">
-            Leveraging extensive experience, we design helidecks tailored to the
-            unique specifications, spatial constraints, and operational
-            requirements of various naval vessels. Our design team employs
-            state-of-the-art software and simulation tools to ensure optimal
-            functionality, safety, and integration with onboard systems.
-          </p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img
-            src="/src/assets/structure2.png"
-            alt="Precision Fabrication Techniques"
-            class="h-48 w-full object-cover rounded-t-lg"
-          />
-          <h2 class="text-xl font-semibold mt-4">
-            Precision Fabrication Techniques
-          </h2>
-          <p class="mt-2 text-gray-600">
-            At G1, we use advanced techniques, cutting-edge materials, and
-            strict quality control to fabricate durable, reliable, and
-            high-performance helidecks. Our structures undergo rigorous testing
-            for structural integrity and corrosion resistance, exceeding
-            industry and regulatory standards.
-          </p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img
-            src="/src/assets/structure3.png"
-            alt="Seamless Installation Processes"
-            class="h-48 w-full object-cover rounded-t-lg"
-          />
-          <h2 class="text-xl font-semibold mt-4">
-            Seamless Installation Processes
-          </h2>
-          <p class="mt-2 text-gray-600">
-            Our skilled installation teams expertly execute helideck
-            installations with meticulous attention to detail, efficiency, and
-            safety. Whether retrofitting existing vessels or integrating into
-            new platforms, we ensure seamless coordination, adherence to project
-            timelines, and minimal disruption to ongoing operations.
-          </p>
-        </div>
+    <div class="bg-dark text-white relative overflow-hidden">
+      <img
+        src="/src/assets/web1.svg"
+        alt="Customized Habitat Design"
+        class="w-full absolute z-0 opacity-[3%]"
+      />
+      <div
+        class="font-semibold border-b-2 border-primary w-96 px-4 py-2 text-white z-10 text-3xl pt-16 ml-[200px]">
+        Why GI for critical structures ?
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img
-            src="/src/assets/structure4.png"
-            alt="Compliance and Certification"
-            class="h-48 w-full object-cover rounded-t-lg"
-          />
-          <h2 class="text-xl font-semibold mt-4">
-            Compliance and Certification
-          </h2>
-          <p class="mt-2 text-gray-600">
-            We ensure all helidecks designed, fabricated, and installed by G1
-            comply with the strictest standards set by relevant authorities,
-            including international maritime organizations and naval oversight
-            bodies. This commitment underscores our dedication to safety,
-            reliability, and operational excellence.
-          </p>
+      <div class="container mx-auto py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- <div class="bg-background p-6 rounded-lg shadow-lg">
+            <img
+              src="/src/assets/structure1.png"
+              alt="Expert Design Capabilities"
+              class="h-48 w-full object-cover rounded-t-lg"
+            />
+            <h2 class="text-xl font-semibold mt-4 text-primary">
+              Expert Design Capabilities
+            </h2>
+            <p class="mt-2">
+              Leveraging extensive experience, we design helidecks tailored to
+              the unique specifications, spatial constraints, and operational
+              requirements of various naval vessels. Our design team employs
+              state-of-the-art software and simulation tools to ensure optimal
+              functionality, safety, and integration with onboard systems.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="/src/assets/structure2.png"
+              alt="Precision Fabrication Techniques"
+              class="h-48 w-full object-cover rounded-t-lg"
+            />
+            <h2 class="text-xl font-semibold mt-4">
+              Precision Fabrication Techniques
+            </h2>
+            <p class="mt-2">
+              At G1, we use advanced techniques, cutting-edge materials, and
+              strict quality control to fabricate durable, reliable, and
+              high-performance helidecks. Our structures undergo rigorous
+              testing for structural integrity and corrosion resistance,
+              exceeding industry and regulatory standards.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="/src/assets/structure3.png"
+              alt="Seamless Installation Processes"
+              class="h-48 w-full object-cover rounded-t-lg"
+            />
+            <h2 class="text-xl font-semibold mt-4">
+              Seamless Installation Processes
+            </h2>
+            <p class="mt-2">
+              Our skilled installation teams expertly execute helideck
+              installations with meticulous attention to detail, efficiency, and
+              safety. Whether retrofitting existing vessels or integrating into
+              new platforms, we ensure seamless coordination, adherence to
+              project timelines, and minimal disruption to ongoing operations.
+            </p>
+          </div> -->
+          {criticalItemCards.map((item) => <CriticalItem {...item} />)}
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img
-            src="/src/assets/structure5.png"
-            alt="Continuous Support and Maintenance"
-            class="h-48 w-full object-cover rounded-t-lg"
-          />
-          <h2 class="text-xl font-semibold mt-4">
-            Continuous Support and Maintenance
-          </h2>
-          <p class="mt-2 text-gray-600">
-            Beyond installation, G1 is committed to ongoing support,
-            maintenance, and lifecycle management to ensure helideck performance
-            and longevity. Our responsive support teams are available 24/7 to
-            address emergent needs, conduct inspections, and implement proactive
-            maintenance measures.
-          </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="/src/assets/structure4.png"
+              alt="Compliance and Certification"
+              class="h-48 w-full object-cover rounded-t-lg"
+            />
+            <h2 class="text-xl font-semibold mt-4">
+              Compliance and Certification
+            </h2>
+            <p class="mt-2">
+              We ensure all helidecks designed, fabricated, and installed by G1
+              comply with the strictest standards set by relevant authorities,
+              including international maritime organizations and naval oversight
+              bodies. This commitment underscores our dedication to safety,
+              reliability, and operational excellence.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="/src/assets/structure5.png"
+              alt="Continuous Support and Maintenance"
+              class="h-48 w-full object-cover rounded-t-lg"
+            />
+            <h2 class="text-xl font-semibold mt-4">
+              Continuous Support and Maintenance
+            </h2>
+            <p class="mt-2">
+              Beyond installation, G1 is committed to ongoing support,
+              maintenance, and lifecycle management to ensure helideck
+              performance and longevity. Our responsive support teams are
+              available 24/7 to address emergent needs, conduct inspections, and
+              implement proactive maintenance measures.
+            </p>
+          </div>
         </div>
       </div>
     </div>

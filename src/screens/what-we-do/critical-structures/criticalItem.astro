@@ -1,0 +1,17 @@
+---
+const { imgSrc, altText, title, desc } = Astro.props;
+---
+
+<div class="bg-background p-6 rounded-lg shadow-lg">
+  <img
+    src={imgSrc}
+    alt={altText}
+    class="h-48 w-full object-cover rounded-t-lg"
+  />
+  <h2 class="text-xl font-semibold mt-4 text-primary">
+    {title}
+  </h2>
+  <p class="mt-2">
+    {desc}
+  </p>
+</div>
