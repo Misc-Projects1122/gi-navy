@@ -1,36 +1,39 @@
 ---
 // NavySection.astro
-import NavyCard from './navyCard.astro';
+import NavyCard from "./navyCard.astro";
 
 const cards = [
   {
-    image: '/boat1.png',
-    title:"Habitability for INS Vikrant",
-    description: 'GI’s habitat expertise enabled the Indian Navy to ensure the best accommodation in the flagship aircraft carrier INS Vikrant, thus enhancing their operational capabilities by ensuring utmost safety and comfort for the crew.',
-    link: '#',
+    image: "/boat1.png",
+    title: "Habitability for INS Vikrant",
+    description:
+      "GI’s habitat expertise enabled the Indian Navy to ensure the best accommodation in the flagship aircraft carrier INS Vikrant, thus enhancing their operational capabilities by ensuring utmost safety and comfort for the crew.",
+    link: "#",
   },
   {
-    image: '/boat2.png',
-    title: 'Critical structures for Naval Support Vessels',
-    description: "GI's helideck expertise enabled Hindustan Shipyard to equip cutting-edge Nistar class Diving Support Vessels with lightweight decks, enhancing Indian Navy flight operations across diverse environments.",
-    link: '#',
+    image: "/boat2.png",
+    title: "Critical structures for Naval Support Vessels",
+    description:
+      "GI's helideck expertise enabled Hindustan Shipyard to equip cutting-edge Nistar class Diving Support Vessels with lightweight decks, enhancing Indian Navy flight operations across diverse environments.",
+    link: "#",
   },
   {
-    image: '/boat1.png',
+    image: "/boat3.png",
     title: "Engineering Solutions",
-    description: 'GI’s proficiency in naval design and engineering has empowered us to successfully execute numerous complex projects across various sectors for the Indian Navy.',
-    link: '#',
+    description:
+      "GI’s proficiency in naval design and engineering has empowered us to successfully execute numerous complex projects across various sectors for the Indian Navy.",
+    link: "#",
   },
 ];
 ---
 
 <section class="bg-[#FFFCF4]">
   <div class="w-full text-center">
-    <h2 class="text-4xl text-gray-800 my-16">Finding <span class="text-blue-500">elegant solutions</span> to complex challenges</h2>
+    <h2 class="text-xl md:text-4xl text-gray-800 py-10 md:py-16">
+      <span class="text-blue-500">Elegant solutions</span> to complex challenges
+    </h2>
     <div class="md:flex w-[100vw]">
-      {cards.map(card => (
-        <NavyCard {...card} />
-      ))}
+      {cards.map((card) => <NavyCard {...card} />)}
     </div>
   </div>
 </section>
