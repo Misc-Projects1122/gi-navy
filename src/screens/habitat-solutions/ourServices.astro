@@ -1,19 +1,10 @@
 ---
-const {
-  imgSrc,
-  altText,
-  title,
-  desc,
-  direction,
-  gredientDirection,
-  spaceDirection,
-} = Astro.props;
+const { imgSrc, altText, title, desc, parentStyle, textStyle, imgStyle } =
+  Astro.props;
 ---
 
-<div
-  class={`relative flex flex-col md:flex-row p-4 md:${spaceDirection}-20 lg:${spaceDirection}-0 flex items-center bg-gradient-to-${gredientDirection} from-[#0E1D2B] from-25%`}>
-  <div
-    class={`md:absolute flex item md:flex-shrink-0 md:-${direction}-36 lg:-${direction}-36`}>
+<div class={parentStyle}>
+  <div class={imgStyle}>
     <img
       src={imgSrc}
       alt={altText}
@@ -24,7 +15,7 @@ const {
     </h2>
   </div>
 
-  <div class={`text-${direction}`}>
+  <div class={textStyle}>
     <h2 class="hidden md:block text-2xl font-semibold mb-3 text-primary">
       {title}
     </h2>
