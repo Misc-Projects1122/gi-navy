@@ -68,105 +68,30 @@ import type { ActionError, ActionInputError } from "astro:actions";
       </div>
       <div class="container mx-auto py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- <div class="bg-background p-6 rounded-lg shadow-lg">
-            <img
-              src="/assets/structure1.png"
-              alt="Expert Design Capabilities"
-              class="h-48 w-full object-cover rounded-t-lg"
-            />
-            <h2 class="text-xl font-semibold mt-4 text-primary">
-              Expert Design Capabilities
-            </h2>
-            <p class="mt-2">
-              Leveraging extensive experience, we design helidecks tailored to
-              the unique specifications, spatial constraints, and operational
-              requirements of various naval vessels. Our design team employs
-              state-of-the-art software and simulation tools to ensure optimal
-              functionality, safety, and integration with onboard systems.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src="/assets/structure2.png"
-              alt="Precision Fabrication Techniques"
-              class="h-48 w-full object-cover rounded-t-lg"
-            />
-            <h2 class="text-xl font-semibold mt-4">
-              Precision Fabrication Techniques
-            </h2>
-            <p class="mt-2">
-              At G1, we use advanced techniques, cutting-edge materials, and
-              strict quality control to fabricate durable, reliable, and
-              high-performance helidecks. Our structures undergo rigorous
-              testing for structural integrity and corrosion resistance,
-              exceeding industry and regulatory standards.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src="/assets/structure3.png"
-              alt="Seamless Installation Processes"
-              class="h-48 w-full object-cover rounded-t-lg"
-            />
-            <h2 class="text-xl font-semibold mt-4">
-              Seamless Installation Processes
-            </h2>
-            <p class="mt-2">
-              Our skilled installation teams expertly execute helideck
-              installations with meticulous attention to detail, efficiency, and
-              safety. Whether retrofitting existing vessels or integrating into
-              new platforms, we ensure seamless coordination, adherence to
-              project timelines, and minimal disruption to ongoing operations.
-            </p>
-          </div> -->
-          {criticalItemCards.map((item) => <CriticalItem {...item} />)}
+          {
+            criticalItemCards
+              .slice(0, 3)
+              .map((item) => <CriticalItem {...item} />)
+          }
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src="/assets/structure4.png"
-              alt="Compliance and Certification"
-              class="h-48 w-full object-cover rounded-t-lg"
-            />
-            <h2 class="text-xl font-semibold mt-4">
-              Compliance and Certification
-            </h2>
-            <p class="mt-2">
-              We ensure all helidecks designed, fabricated, and installed by G1
-              comply with the strictest standards set by relevant authorities,
-              including international maritime organizations and naval oversight
-              bodies. This commitment underscores our dedication to safety,
-              reliability, and operational excellence.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img
-              src="/assets/structure5.png"
-              alt="Continuous Support and Maintenance"
-              class="h-48 w-full object-cover rounded-t-lg"
-            />
-            <h2 class="text-xl font-semibold mt-4">
-              Continuous Support and Maintenance
-            </h2>
-            <p class="mt-2">
-              Beyond installation, G1 is committed to ongoing support,
-              maintenance, and lifecycle management to ensure helideck
-              performance and longevity. Our responsive support teams are
-              available 24/7 to address emergent needs, conduct inspections, and
-              implement proactive maintenance measures.
-            </p>
-          </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-[66%] mx-auto">
+          {
+            criticalItemCards
+              .slice(3, 5)
+              .map((item) => <CriticalItem {...item} />)
+          }
         </div>
       </div>
     </div>
     <!-- Lean More -->
-    <div class="lg:max-w-4xl lg:mx-auto lg:flex mb-20">
+    <div class="lg:max-w-4xl lg:mx-auto lg:flex my-20">
       <img
         src="/assets/vikrant2.png"
         alt="Customized Habitat Design"
         class="w-full lg:w-[50%] lg:h-[50%] rounded-lg"
       />
-      <div class="ml-6">
+      <div class="ml-8">
         <div class="text-3xl font-semibold mb-9 mt-10">
           GI: Delivering Unmatched Structural Solutions
         </div>
