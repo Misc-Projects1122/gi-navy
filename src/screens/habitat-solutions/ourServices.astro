@@ -1,0 +1,35 @@
+---
+const {
+  imgSrc,
+  altText,
+  title,
+  desc,
+  direction,
+  gredientDirection,
+  spaceDirection,
+} = Astro.props;
+---
+
+<div
+  class={`relative flex flex-col md:flex-row p-4 md:${spaceDirection}-20 lg:ml-0 flex items-center bg-gradient-to-${gredientDirection} from-[#0E1D2B] from-25%`}>
+  <div
+    class={`md:absolute flex items-center md:flex-shrink-0 md:-${direction}-36 lg:-${direction}-36`}>
+    <img
+      src={imgSrc}
+      alt={altText}
+      class="h-[80px] md:h-[120px] w-[120px] m-2 drop-shadow-primary"
+    />
+    <h2 class="block md:hidden md:text-2xl font-semibold mb-3 text-primary">
+      {title}
+    </h2>
+  </div>
+
+  <div class={`text-${direction}`}>
+    <h2 class="hidden md:block text-2xl font-semibold mb-3 text-primary">
+      {title}
+    </h2>
+    <p class="text-justify">
+      {desc}
+    </p>
+  </div>
+</div>
