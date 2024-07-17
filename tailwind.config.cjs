@@ -16,9 +16,18 @@ module.exports = {
         secondary: "#007BC7",
       },
       dropShadow: {
-        'white': '5px 0 0 #ffffff',
-        'primary':'0 0 5px #01BDB7',
-      }
+        white: "5px 0 0 #ffffff",
+        primary: "0 0 5px #01BDB7",
+      },
+    },
+    screens: {
+      xxs: "375px",
+      xs: "425px", // min-width
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
   },
   plugins: [require("@tailwindcss/typography")],
