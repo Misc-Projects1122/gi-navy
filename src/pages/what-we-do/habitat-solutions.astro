@@ -1,5 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import OurServices from "screens/habitat-solutions/ourServices.astro";
+import { cards } from "screens/habitat-solutions/card";
 ---
 
 <Layout title="Our Services">
@@ -10,7 +12,7 @@ import Layout from "@layouts/Layout.astro";
         <a href="/"><span>Home </span></a><img
           src="/assets/keyboard-arrow-right.svg"
           class="w-6"
-        /><span>What we do </span><img
+        /><span>What we do</span><img
           src="/assets/keyboard-arrow-right.svg"
           class="w-6"
         />
@@ -25,12 +27,12 @@ import Layout from "@layouts/Layout.astro";
 
     <!-- Leading the way -->
     <div class="max-w-2xl mx-auto p-6 space-y-8 mb-12">
-      <div class="text-4xl font-md flex justify-center mt-8">
+      <div class="text-base md:text-4xl font-md flex justify-center mt-8">
         <div>Leading the Way in</div>
         <div class="ml-2 text-[#007BC7]">Habitat Services</div>
       </div>
 
-      <p class="text-justify">
+      <p class="text-justify text-sm md:text-base">
         <span class="text-[#007BC7] font-md"
           >GI-Tech is a premier habitat service provider</span
         > catering specifically to the needs of the esteemed Navy. With an unwavering
@@ -39,7 +41,7 @@ import Layout from "@layouts/Layout.astro";
         through our comprehensive habitat solutions.
       </p>
 
-      <p class="text-justify">
+      <p class="text-justify text-sm md:text-base">
         At GI-Tech, we recognize the critical importance of maintaining optimal
         living and working environments for naval personnel, <span
           class="text-[#007BC7] font-md"
@@ -55,156 +57,48 @@ import Layout from "@layouts/Layout.astro";
       <img
         src="/assets/web1.svg"
         alt="Customized Habitat Design"
-        class="w-full absolute z-0 opacity-[3%]"
+        class="w-full absolute md:relative z-0 opacity-[3%]"
       />
       <div
-        class="font-semibold border-b-2 border-primary w-56 px-4 py-2 text-white z-10 text-3xl pt-16 ml-[270px]">
+        class="font-semibold border-b-2 border-primary w-56 px-4 py-2 text-white z-10 text-3xl pt-16 md:ml-[2%] lg:ml-[7%] xl:ml-[20%]">
         Our Services
       </div>
 
       <div class="max-w-2xl mx-auto p-6 space-y-8 z-10 mt-7 mb-20">
-        <div
-          class="relative p-4 flex items-center bg-gradient-to-r from-[#0E1D2B] from-25%">
-          <div class="absolute flex-shrink-0 -left-36">
-            <img
-              src="/assets/service1.svg"
-              alt="Customized Habitat Design"
-              class="h-[120px] w-[120px] m-2 drop-shadow-primary"
-            />
-          </div>
-
-          <div class="">
-            <h2 class="text-2xl font-semibold mb-3 text-primary">
-              Customized Habitat Design
-            </h2>
-            <p class="text-justify">
-              We specialize in creating bespoke habitat solutions that align
-              seamlessly with the specific needs and operational requirements of
-              the Navy. Whether it’s optimizing space utilization, enhancing
-              sustainability, or integrating advanced technologies, our designs
-              are meticulously crafted to exceed expectations.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="relative p-6 flex items-center bg-gradient-to-l from-[#0E1D2B] from-25%">
-          <div class="absolute -right-36 ml-auto flex-shrink-0">
-            <img
-              src="/assets/service2.svg"
-              alt="Construction and Installation"
-              class="h-[120px] w-[120px] m-2 drop-shadow-primary"
-            />
-          </div>
-          <div class="">
-            <h2 class="text-2xl font-semibold mb-3 text-primary text-right">
-              Construction and Installation
-            </h2>
-            <p class="text-justify">
-              We prioritize precision and quality craftsmanship in constructing
-              and installing habitats, ensuring utmost diligence and attention
-              to detail. From modular living quarters to advanced workspace
-              configurations, we ensure timely delivery while adhering to the
-              highest standards of safety and compliance.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="relative p-6 flex items-center bg-gradient-to-r from-[#0E1D2B] from-25%">
-          <div class="absolute -left-36 flex-shrink-0">
-            <img
-              src="/assets/service3.svg"
-              alt="Customized Habitat Design"
-              class="h-[120px] w-[120px] mr-2 drop-shadow-primary"
-            />
-          </div>
-          <div>
-            <h2 class="text-2xl font-semibold mb-3 text-primary">
-              Innovation and Sustainability
-            </h2>
-            <p class="text-justify">
-              As champions of innovation and sustainability, we leverage
-              cutting-edge technologies and best practices to optimize energy
-              efficiency, resource utilization, and environmental stewardship
-              across all our habitat solutions. From renewable energy systems to
-              eco-friendly materials, we strive to minimize our ecological
-              footprint while maximizing operational effectiveness.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="relative p-6 flex items-center bg-gradient-to-l from-[#0E1D2B] from-25%">
-          <div class="absolute -right-36 ml-auto flex-shrink-0">
-            <img
-              src="/assets/service4.svg"
-              alt="Responsive Support and Collaboration"
-              class="h-[120px] w-[120px] m-2 drop-shadow-primary"
-            />
-          </div>
-          <div>
-            <h2 class="text-2xl font-semibold mb-3 text-primary text-right">
-              Responsive Support and Collaboration
-            </h2>
-            <p class="text-justify">
-              Our dedicated team remains steadfastly committed to providing
-              responsive support and collaboration at every stage of the
-              engagement. Whether it’s addressing emergent needs, facilitating
-              seamless transitions, or fostering open communication, we are
-              always available to serve as trusted partners in achieving mission
-              success.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="relative p-6 flex items-center bg-gradient-to-r from-[#0E1D2B] from-25%">
-          <div class="absolute -left-36 flex-shrink-0">
-            <img
-              src="/assets/service5.svg"
-              alt="Customized Habitat Design"
-              class="h-[120px] w-[120px] m-2 drop-shadow-primary"
-            />
-          </div>
-          <div>
-            <h2 class="text-2xl font-semibold mb-3 text-primary">
-              Maintenance and Upkeep
-            </h2>
-            <p class="text-justify">
-              Our commitment to long-term partnerships extends beyond the
-              initial deployment. We offer comprehensive maintenance and upkeep
-              services to ensure the continued functionality, durability, and
-              resilience of naval habitats, minimizing downtime and maximizing
-              operational readiness.
-            </p>
-          </div>
-        </div>
+        {cards.map((card) => <OurServices {...card} />)}
       </div>
     </div>
 
     <!-- Learn More -->
-    <div class="max-w-4xl mx-auto flex mb-20 mt-16">
+    <div
+      class="max-w-4xl mx-10 lg:mx-auto flex flex-col-reverse md:flex-row mb-20 mt-16 bgiwhite relative">
       <div>
-        <div class="text-3xl font-semibold mb-9 mt-12">
+        <div
+          class="text-xs md:text-3xl text-white md:text-black font-semibold mb-9 lg:mt-12 absolute md:relative bottom-52 md:bottom-0 xxs:bottom-44 xs:bottom-36 z-50 left-3">
           Upgrading Habitability: A Game-Changing Partnership with GI
         </div>
-        <p class="text-justify mb-9">
+        <p class="text-justify mb-9 mt-3 md:mt-0">
           Learn how GI's habitat expertise enabled the Indian Navy to ensure the
           best accommodation in the flagship aircraft carrier INS Vikrant , thus
           enhancing their operational capabilities by ensuring utmost safety and
           comfort for the crew.
         </p>
         <div
-          class="border-[#007BC7] border-4 text-[#007BC7] text-center w-44 px-4 py-3 font-barlow font-semibold">
+          class="hidden md:block border-[#007BC7] border-4 text-[#007BC7] text-center w-44 px-4 py-3 font-barlow font-semibold">
           LEARN MORE
         </div>
       </div>
+      <!-- <div class="w-[100vw] h-[100vh] flex md:flex-col"> -->
       <img
         src="/assets/IAC-Vikrant.png"
         alt="Customized Habitat Design"
-        class="w-[50%] h-[50%] ml-10 rounded-lg"
+        class="w-full md:w-[50%] h-[50%] md:ml-10 rounded-lg"
       />
+
+      <!-- <div class="block md:hidden text-3xl font-semibold mb-9 lg:mt-12">
+        Upgrading Habitability: A Game-Changing Partnership with GI
+      </div> -->
+      <!-- </div> -->
     </div>
   </body>
 </Layout>
