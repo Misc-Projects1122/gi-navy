@@ -3,11 +3,12 @@ import { Dropdown as DropdownContainer, DropdownItems } from "astro-navbar";
 const { title, lastItem, children } = Astro.props;
 ---
 
-<li class="hidden md:block relative">
+<li class="relative">
   <DropdownContainer class="group">
     <button
       class="flex items-center gap-1 w-full lg:w-auto lg:px-3 text-gray-600 hover:text-gray-900">
-      <span class="text-lg text-center flex align-middle items-center mt-2"
+      <span
+        class="text-lg text-center flex align-middle items-center md:my-1 my-0 md:mt-1 mt-2"
         >{title}</span
       >
       <svg
@@ -26,18 +27,16 @@ const { title, lastItem, children } = Astro.props;
     <DropdownItems>
       <div
         class:list={[
-          "lg:absolute w-full lg:w-48 z-10",
+          "md:absolute w-full md:w-48 z-10",
           lastItem
-            ? "lg:right-0 origin-top-right"
-            : "lg:left-0 origin-top-left",
+            ? "md:right-0 origin-top-right"
+            : "md:left-0 origin-top-left",
         ]}>
         <div
-          class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col">
+          class="px-3 md:py-2 md:bg-white md:rounded-md md:shadow md:border flex flex-col">
           {
             children.map((item) => (
-              <a
-                href={item.path}
-                class="py-1 text-gray-600 hover:text-gray-900">
+              <a href={item.path} class="py-1 text-black hover:text-gray-900">
                 {item.title}
               </a>
             ))
