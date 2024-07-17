@@ -1,6 +1,6 @@
 export const enginnerItemCards = [
   {
-    imgSrc: "/src/assets/solutions1.png",
+    imgSrc: "/assets/solutions1.png",
     altText: "INS Jyoti",
     title: "INS Jyoti",
     desc: "Komandarm Fedko class fleet replenishment oiler",
@@ -9,7 +9,7 @@ export const enginnerItemCards = [
     descColor: "text-white",
   },
   {
-    imgSrc: "/src/assets/solutions2.png",
+    imgSrc: "/assets/solutions2.png",
     altText: "INS Beas",
     title: "INS Beas",
     desc: "Bhahmaputra class frigate",
@@ -18,7 +18,7 @@ export const enginnerItemCards = [
     descColor: "text-background",
   },
   {
-    imgSrc: "/src/assets/solutions3.png",
+    imgSrc: "/assets/solutions3.png",
     altText: "INS Nireekshak",
     title: "INS Nireekshak",
     desc: "Diving support vessel",
@@ -27,7 +27,7 @@ export const enginnerItemCards = [
     descColor: "text-white",
   },
   {
-    imgSrc: "/src/assets/solutions4.png",
+    imgSrc: "/assets/solutions4.png",
     altText: "MT Swarna Kalash",
     title: "MT Swarna Kalash",
     desc: "Oil products tanker",
@@ -36,7 +36,7 @@ export const enginnerItemCards = [
     descColor: "text-background",
   },
   {
-    imgSrc: "/src/assets/solutions5.png",
+    imgSrc: "/assets/solutions5.png",
     altText: "INS Tarangini and INS Sudarshini",
     title: "INS Tarangini and INS Sudarshini",
     desc: "Sail training ship",
@@ -45,7 +45,7 @@ export const enginnerItemCards = [
     descColor: "text-white",
   },
   {
-    imgSrc: "/src/assets/solutions6.png",
+    imgSrc: "/assets/solutions6.png",
     altText: "MV Arabian Sea",
     title: "MV Arabian Sea",
     desc: "General passenger/cargo ship",
@@ -57,7 +57,7 @@ export const enginnerItemCards = [
 
 export const criticalItemCards = [
   {
-    imgSrc: "/src/assets/structure1.png",
+    imgSrc: "/assets/structure1.png",
     altText: "Expert Design Capabilities",
     title: "Expert Design Capabilities",
     desc: `Leveraging extensive experience, we design helidecks tailored to
@@ -67,7 +67,7 @@ export const criticalItemCards = [
             functionality, safety, and integration with onboard systems.`,
   },
   {
-    imgSrc: "/src/assets/structure2.png",
+    imgSrc: "/assets/structure2.png",
     altText: "Precision Fabrication Techniques",
     title: "Precision Fabrication Techniques",
     desc: `At G1, we use advanced techniques, cutting-edge materials, and
@@ -77,7 +77,7 @@ export const criticalItemCards = [
             exceeding industry and regulatory standards.`,
   },
   {
-    imgSrc: "/src/assets/structure3.png",
+    imgSrc: "/assets/structure3.png",
     altText: "Seamless Installation Processes",
     title: "Seamless Installation Processes",
     desc: `Our skilled installation teams expertly execute helideck
@@ -87,7 +87,7 @@ export const criticalItemCards = [
             project timelines, and minimal disruption to ongoing operations.`,
   },
   {
-    imgSrc: "/src/assets/structure4.png",
+    imgSrc: "/assets/structure4.png",
     altText: "Compliance and Certification",
     title: "Compliance and Certification",
     desc: `We ensure all helidecks designed, fabricated, and installed by G1
@@ -97,7 +97,7 @@ export const criticalItemCards = [
             reliability, and operational excellence.`,
   },
   {
-    imgSrc: "/src/assets/structure5.png",
+    imgSrc: "/assets/structure5.png",
     altText: "Continuous Support and Maintenance",
     title: "Continuous Support and Maintenance",
     desc: `Beyond installation, G1 is committed to ongoing support,
