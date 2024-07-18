@@ -57,6 +57,7 @@ export const enginnerItemCards = [
 
 export const criticalItemCards = [
   {
+    index: 1,
     imgSrc: "/assets/structure1.png",
     altText: "Expert Design Capabilities",
     title: "Expert Design Capabilities",
@@ -67,6 +68,7 @@ export const criticalItemCards = [
             functionality, safety, and integration with onboard systems.`,
   },
   {
+    index: 2,
     imgSrc: "/assets/structure2.png",
     altText: "Precision Fabrication Techniques",
     title: "Precision Fabrication Techniques",
@@ -77,6 +79,7 @@ export const criticalItemCards = [
             exceeding industry and regulatory standards.`,
   },
   {
+    index: 3,
     imgSrc: "/assets/structure3.png",
     altText: "Seamless Installation Processes",
     title: "Seamless Installation Processes",
@@ -87,6 +90,7 @@ export const criticalItemCards = [
             project timelines, and minimal disruption to ongoing operations.`,
   },
   {
+    index: 4,
     imgSrc: "/assets/structure4.png",
     altText: "Compliance and Certification",
     title: "Compliance and Certification",
@@ -97,6 +101,7 @@ export const criticalItemCards = [
             reliability, and operational excellence.`,
   },
   {
+    index: 5,
     imgSrc: "/assets/structure5.png",
     altText: "Continuous Support and Maintenance",
     title: "Continuous Support and Maintenance",
