@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
-        barlow: ["'Barlow Condensed'", "sans-serif"],
+        barlow: ["Barlow Condensed", "sans-serif"],
       },
       colors: {
         dark: "#03111E",

@@ -2,7 +2,6 @@
 // PartnersSection.astro
 const partners = [
   { src: "/alliance/alliance1.png", alt: "Partner 1" },
-  { src: "/alliance/alliance2.png", alt: "Partner 2" },
   { src: "/alliance/alliance3.png", alt: "Partner 3" },
   { src: "/alliance/alliance4.png", alt: "Partner 4" },
   { src: "/alliance/alliance5.png", alt: "Partner 5" },
@@ -13,17 +12,17 @@ const partners = [
 <section class="bg-backgroundSec py-12">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-xl md:text-4xl mb-4 font-barlow">OUR PARTNERS</h2>
-    <p class="text-md md:text-lg text-gray-600 mb-8">
+    <p class="text-md md:text-[22px] text-gray-600 mb-8">
       Joining hands with the top leaders in the industry
     </p>
-    <div class="flex flex-wrap justify-center items-center gap-8">
+    <div class="flex flex-wrap justify-center items-center gap-7 xs:gap-12">
       {
         partners.map((partner) => (
           <div class="flex justify-center items-center">
             <img
               src={partner.src}
               alt={partner.alt}
-              class="h-7 sm:h-10 md:h-20"
+              class="h-7 xxs:h-10 md:h-20"
             />
           </div>
         ))

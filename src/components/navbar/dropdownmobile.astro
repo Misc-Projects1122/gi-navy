@@ -5,7 +5,7 @@ const { title, lastItem, children } = Astro.props;
 
 <li class="relative">
   <span
-    class="text-lg text-center flex align-middle items-center mt-2 font-semibold"
+    class="text-base text-center flex align-middle items-center mt-2 font-semibold"
     >{title}</span
   >
   <div
@@ -19,7 +19,7 @@ const { title, lastItem, children } = Astro.props;
         children.map((item) => (
           <a
             href={item.path}
-            class="py-1.5 text-background font-medium leading-5 hover:text-gray-900 ml-2">
+            class="py-1.5 text-background font-medium leading-5 hover:text-blue-500 ml-2">
             {item.title}
           </a>
         ))
