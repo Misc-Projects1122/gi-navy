@@ -2,8 +2,14 @@
 import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="What we are">
-  <div class="relative border-t-4 border-primary">
+<Layout title="Who we are">
+  <div class="relative border-y-4 border-primary">
+    <div class="bg-background py-3 pl-12 text-white flex">
+      <a href="/"><span>Home </span></a><img
+        src="/assets/keyboard-arrow-right.svg"
+        class="w-6"
+      /><span class="text-primary">Who we are</span>
+    </div>
     <div id="hero-banner" class="relative">
       <img
         src="/what-we-are-background.png"
@@ -73,117 +79,123 @@ import Layout from "@layouts/Layout.astro";
       </div>
     </div>
 
-    <div
-      class="w-full py-16 px-10 lg:px-40 xl:px-60 bg-dark text-white relative overflow-hidden">
-      <h2 class="text-2xl font-bold font-barlow">Leadership</h2>
-      <div class="h-1 w-[20%] bg-teal-500 mb-6"></div>
-      <p class="mb-8">
-        The current leadership is a mix of seasoned industry and business
-        professionals and ex-Indian Naval Senior officers, providing the impetus
-        to grow and expand beyond the current offerings to the next phase, to
-        supply the most advanced technologies and solutions to the Indian
-        Defence Sector.
-      </p>
+    <div class="w-full bg-dark text-white relative overflow-hidden">
+      <img
+        src="/assets/dark-hex.png"
+        alt="Customized Habitat Design"
+        class="w-full absolute z-0 opacity-[10%]"
+      />
+      <div class="py-16 px-10 lg:px-40 xl:px-60">
+        <h2 class="text-2xl font-bold mb-4 font-barlow">Leadership</h2>
+        <div class="h-1 w-[20%] bg-teal-500 mb-6"></div>
+        <p class="mb-8">
+          The current leadership is a mix of seasoned industry and business
+          professionals and ex-Indian Naval Senior officers, providing the
+          impetus to grow and expand beyond the current offerings to the next
+          phase, to supply the most advanced technologies and solutions to the
+          Indian Defence Sector.
+        </p>
 
-      <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> -->
-      <div class="flex flex-col md:flex-row justify-between">
-        <div
-          class="flex items-center bg-gradient-to-r from-[#0E1D2B] from-50% ml-[30px] xxs:ml-[80px] lg:ml-[100px]">
-          <img
-            src="/leadership/pabby.png"
-            alt="Vice Admiral G. S. Pabby"
-            class="w-[50%] md:w-32 lg:w-36 xl:w-48 mr-4 z-10 ml-[-30px] xxs:ml-[-80px] lg:ml-[-100px]"
-          />
-          <div class="">
-            <h3 class="text-sm xl:text-xl font-bold">
-              Vice Admiral G. S. Pabby
-            </h3>
-            <p class="text-xs xl:text-sm text-white">AVSM, VSM (Retd.)</p>
-            <p class="text-xs xl:text-sm text-teal-500">Chief Advisor</p>
-            <p class="hidden xxs:block text-xs xl:text-sm text-white xl:mb-1">
-              Ex Chief of Material, Indian Navy
-            </p>
-            <p class="hidden xs:block text-xs xl:text-sm text-white xl:mb-1">
-              IIT Bombay
-            </p>
-            <p class="hidden xs:block text-xs xl:text-sm text-white">
-              NIT Kurukshetra
-            </p>
-          </div>
-        </div>
-        <div
-          class="flex items-center bg-gradient-to-r from-[#0E1D2B] from-50% ml-[30px] xxs:ml-[80px] lg:ml-[100px] mt-5 md:mt-0">
-          <img
-            src="/leadership/rajesh.png"
-            alt="Vice Admiral G. S. Pabby"
-            class="w-[50%] md:w-32 lg:w-36 xl:w-48 mr-4 z-10 ml-[-30px] xxs:ml-[-80px] lg:ml-[-100px]"
-          />
-          <div class="">
-            <h3 class="text-sm xl:text-xl font-bold">Rajesh Behera</h3>
-            <p class="text-xs xl:text-sm text-teal-500">Business Head</p>
-            <p class="hidden xxs:block text-xs xl:text-sm text-white">
-              15+ years of Commercial
-            </p><p
-              class="hidden xxs:block text-xs xl:text-sm text-white xl:mb-1">
-              and Operations Management
-            </p>
-            <p class="hidden sm:block text-xs xl:text-sm text-white">
-              IMD Business School
-            </p>
-            <p class="hidden sm:block text-xs xl:text-sm text-white">
-              IIT Bombay
-            </p>
-          </div>
-        </div>
-        <!-- <div class="flex items-center">
-          <img
-            src="/leadership/rajesh.png"
-            alt="Rajesh Behera"
-            class="w-40 lg:w-48 lg:h-48 mr-4 z-10"
-          />
+        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> -->
+        <div class="flex flex-col md:flex-row justify-between">
           <div
-            class="bg-gradient-to-r from-[#0E1D2B] from-50% ml-[-70px] py-3 pr-7 pl-[70px]">
-            <h3 class="text-sm lg:text-xl font-bold">Rajesh Behera</h3>
-            <p class="text-xs lg:text-sm text-teal-500">Business Head</p>
-            <p class="text-xs lg:text-sm text-white">
-              15+ years of Commercial
-            </p>
-            <p class="text-xs lg:text-sm text-white">
-              and Operations Management
-            </p>
-            <p class="text-xs hidden lg:block lg:text-sm text-white lg:mb-2">
-              Ex Chief of Material, Indian Navy
-            </p>
-            <p class="text-xs lg:text-sm text-white lg:mb-2">
-              IMD Business School
-            </p>
-            <p class="text-xs lg:text-sm text-white">IIT Bombay</p>
+            class="flex items-center bg-gradient-to-r from-[#0E1D2B] from-50% ml-[30px] xxs:ml-[80px] lg:ml-[100px]">
+            <img
+              src="/leadership/pabby.png"
+              alt="Vice Admiral G. S. Pabby"
+              class="w-[50%] md:w-32 lg:w-36 xl:w-48 mr-4 z-10 ml-[-30px] xxs:ml-[-80px] lg:ml-[-100px]"
+            />
+            <div class="">
+              <h3 class="text-sm xl:text-xl font-bold">
+                Vice Admiral G. S. Pabby
+              </h3>
+              <p class="text-xs xl:text-sm text-white">AVSM, VSM (Retd.)</p>
+              <p class="text-xs xl:text-sm text-teal-500">Chief Advisor</p>
+              <p class="hidden xxs:block text-xs xl:text-sm text-white xl:mb-1">
+                Ex Chief of Material, Indian Navy
+              </p>
+              <p class="hidden xs:block text-xs xl:text-sm text-white xl:mb-1">
+                IIT Bombay
+              </p>
+              <p class="hidden xs:block text-xs xl:text-sm text-white">
+                NIT Kurukshetra
+              </p>
+            </div>
           </div>
-        </div> -->
-      </div>
+          <div
+            class="flex items-center bg-gradient-to-r from-[#0E1D2B] from-50% ml-[30px] xxs:ml-[80px] lg:ml-[100px] mt-5 md:mt-0">
+            <img
+              src="/leadership/rajesh.png"
+              alt="Vice Admiral G. S. Pabby"
+              class="w-[50%] md:w-32 lg:w-36 xl:w-48 mr-4 z-10 ml-[-30px] xxs:ml-[-80px] lg:ml-[-100px]"
+            />
+            <div class="">
+              <h3 class="text-sm xl:text-xl font-bold">Rajesh Behera</h3>
+              <p class="text-xs xl:text-sm text-teal-500">Business Head</p>
+              <p class="hidden xxs:block text-xs xl:text-sm text-white">
+                15+ years of Commercial
+              </p><p
+                class="hidden xxs:block text-xs xl:text-sm text-white xl:mb-1">
+                and Operations Management
+              </p>
+              <p class="hidden sm:block text-xs xl:text-sm text-white">
+                IMD Business School
+              </p>
+              <p class="hidden sm:block text-xs xl:text-sm text-white">
+                IIT Bombay
+              </p>
+            </div>
+          </div>
+          <!-- <div class="flex items-center">
+            <img
+              src="/leadership/rajesh.png"
+              alt="Rajesh Behera"
+              class="w-40 lg:w-48 lg:h-48 mr-4 z-10"
+            />
+            <div
+              class="bg-gradient-to-r from-[#0E1D2B] from-50% ml-[-70px] py-3 pr-7 pl-[70px]">
+              <h3 class="text-sm lg:text-xl font-bold">Rajesh Behera</h3>
+              <p class="text-xs lg:text-sm text-teal-500">Business Head</p>
+              <p class="text-xs lg:text-sm text-white">
+                15+ years of Commercial
+              </p>
+              <p class="text-xs lg:text-sm text-white">
+                and Operations Management
+              </p>
+              <p class="text-xs hidden lg:block lg:text-sm text-white lg:mb-2">
+                Ex Chief of Material, Indian Navy
+              </p>
+              <p class="text-xs lg:text-sm text-white lg:mb-2">
+                IMD Business School
+              </p>
+              <p class="text-xs lg:text-sm text-white">IIT Bombay</p>
+            </div>
+          </div> -->
+        </div>
 
-      <h2 class="text-2xl font-bold mb-4 mt-16">Promoter</h2>
-      <div class="h-1 w-[20%] bg-teal-500 mb-6"></div>
-      <div class="flex justify-center">
-        <div
-          class="flex items-center bg-gradient-to-r from-[#0E1D2B] from-50% ml-[30px] xxs:ml-[80px] lg:ml-[100px] mt-5 md:mt-0">
-          <img
-            src="/leadership/abhishek.png"
-            alt="Abhishek Kumar"
-            class="w-[50%] md:w-32 lg:w-36 xl:w-48 mr-4 z-10 ml-[-30px] xxs:ml-[-80px] lg:ml-[-100px]"
-          />
-          <div class="">
-            <h3 class="text-sm xl:text-xl font-bold">Abhishek Kumar</h3>
-            <p class="text-xs xl:text-sm text-teal-500">Promoter</p>
-            <p class="text-xs xl:text-sm text-white">
-              20+ years of business leadership
-            </p>
-            <p class="hidden xxs:block text-xs xl:text-sm text-white xl:mb-1">
-              Harvard Business School
-            </p>
-            <p class="hidden xs:block text-xs xl:text-sm text-white xl:mb-1">
-              IIT Kanpur
-            </p>
+        <h2 class="text-2xl font-bold mb-4 mt-16">Promoter</h2>
+        <div class="h-1 w-[20%] bg-teal-500 mb-6"></div>
+        <div class="flex justify-center">
+          <div
+            class="flex items-center bg-gradient-to-r from-[#0E1D2B] from-50% ml-[30px] xxs:ml-[80px] lg:ml-[100px] mt-5 md:mt-0">
+            <img
+              src="/leadership/abhishek.png"
+              alt="Abhishek Kumar"
+              class="w-[50%] md:w-32 lg:w-36 xl:w-48 mr-4 z-10 ml-[-30px] xxs:ml-[-80px] lg:ml-[-100px]"
+            />
+            <div class="">
+              <h3 class="text-sm xl:text-xl font-bold">Abhishek Kumar</h3>
+              <p class="text-xs xl:text-sm text-teal-500">Promoter</p>
+              <p class="text-xs xl:text-sm text-white">
+                20+ years of business leadership
+              </p>
+              <p class="hidden xxs:block text-xs xl:text-sm text-white xl:mb-1">
+                Harvard Business School
+              </p>
+              <p class="hidden xs:block text-xs xl:text-sm text-white xl:mb-1">
+                IIT Kanpur
+              </p>
+            </div>
           </div>
         </div>
       </div>
