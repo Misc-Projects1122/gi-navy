@@ -1,36 +1,46 @@
 ---
-// HeroBanner.astro
+
 ---
 
-<div class="md:relative md:h-screen border-y-4 border-primary">
-  <div id="hero-banner" class="md:absolute inset-0">
-    <img
-      src="/hero/heroBanner1.png"
-      alt="Hero Image"
-      class="w-full h-full object-cover transition-opacity duration-4000 ease-in-out"
-    />
+<div class="md:relative md:border-y-4 md:border-primary">
+  <div class="carousel_container">
+    <div
+      class="flex flex-nowrap overflow-hidden border-b-2 border-primary md:border-b-0">
+      <div class="carousel_item">
+        <img src="/hero/heroBanner1.png" class="h-full w-full" />
+      </div>
+      <div class="carousel_item">
+        <img src="/hero/heroBanner2.png" class="h-full w-full" />
+      </div>
+      <div class="carousel_item">
+        <img src="/hero/heroBanner3.png" class="h-full w-full" />
+      </div>
+      <div class="carousel_item">
+        <img src="/hero/heroBanner4.png" class="h-full w-full" />
+      </div>
+    </div>
   </div>
-  <div class="md:absolute inset-0 bg-black opacity-60"></div>
+  <div class="md:absolute inset-0 bg-black opacity-50"></div>
   <div class="md:absolute inset-0 flex items-center justify-start md:px-16">
     <div
-      class="text-white text-center md:text-left py-4 md:py-0 px-7 md:px-0 bg-dark md:bg-transparent max-w-2xl">
+      class="flex flex-col items-center md:items-start text-white text-center md:text-left py-4 md:py-0 px-7 md:px-0 bg-dark md:bg-transparent max-w-xl">
       <h1
-        class="text-md font-bold md:text-5xl lg:text-6xl leading-tight font-barlow">
+        class="text-md xxs:text-lg font-semibold md:text-5xl lg:text-5xl leading-10 font-condensed">
         Pioneering Engineering, Delivering Excellence
       </h1>
-      <p class="mt-4 text-base md:text-lg lg:text-xl leading-relaxed">
+      <p class="mt-4 text-xs md:text-lg lg:text-sm w-3/4 carousel_text">
         Mission-driven, customer-centric, multi-domain maritime solutions using
         cutting-edge technologies to envision and safeguard the fleet of the
         future.
       </p>
       <div class="mt-8 space-x-4">
         <a
-          class="text-white border-2 border-white px-3 md:px-6 py-2 md:py-3 text-md md:text-lg inline-block">
+          class="text-white border-2 border-white px-3 md:px-6 py-1 md:py-[8px] text-md md:text-lg inline-block font-condensed">
           Learn More
         </a>
         <a
           href="#"
-          class="bg-blue-500 text-white px-3 md:px-6 py-2 md:py-3 text-md md:text-lg inline-block"
+          class="bg-blue-500 text-white px-3 md:px-6 py-1 md:py-3 text-md md:text-lg inline-block font-condensed"
           >Contact Us</a
         >
       </div>
@@ -38,14 +48,58 @@
   </div>
 </div>
 
-<script>
-  const images = ["/hero/heroBanner1.png", "/hero/heroBanner2.png"];
+<style>
+  .carousel_item {
+    position: relative;
+    min-width: 100%;
+    height: 90vh;
+    transition: all 0.5s linear;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .carousel_text {
+    line-height: 30px;
+  }
 
-  let currentImageIndex = 0;
+  /* Media query for mobile view */
+  @media (max-width: 425px) {
+    .carousel_item {
+      height: 30vh;
+    }
+    .carousel_text {
+      line-height: 20px;
+    }
+  }
+</style>
 
+<script is:inline>
+  const carouselItems = document.querySelectorAll(".carousel_item");
+
+  // It will be used to shift the items  by incrementing its
+  // value every 2 seconds and multiplying it by 100
+  let i = 1;
+
+  // Running the condition every 2 seconds using setInterval
   setInterval(() => {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    const heroBanner = document.getElementById("hero-banner");
-    heroBanner.innerHTML = `<img src="${images[currentImageIndex]}" alt="Hero Image" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" />`;
-  }, 4000); //4 sec
+    // Accessing All the carousel Items
+    Array.from(carouselItems).forEach((item, index) => {
+      // Checking if the value of i is less than the
+      // number of carousel items, if it is true,
+      // move all the carousel items 100% towards left
+      if (i < carouselItems.length) {
+        item.style.transform = `translateX(-${i * 100}%)`;
+      }
+    });
+
+    // If the the value of i is less than the number of
+    // Carousel items, then increment the value of i by 1
+    // Otherwise set the value of i to 0 if it becomes greater
+    // than the number of carousel items
+    if (i < carouselItems.length) {
+      i++;
+    } else {
+      i = 0;
+    }
+  }, 4000);
 </script>

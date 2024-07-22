@@ -5,8 +5,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        // sans: ["Poppins", "sans-serif"],
+        // barlow: ["Barlow Condensed", "sans-serif"],
         sans: ["Poppins", "sans-serif"],
-        barlow: ["Barlow Condensed", "sans-serif"],
+        condensed: ["Barlow Condensed", "sans-serif"],
+      },
+      lineHeight: {
+        "extra-loose": "70px",
       },
       colors: {
         dark: "#03111E",
