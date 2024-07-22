@@ -6,13 +6,25 @@ import { enginnerItemCards } from "../../screens/what-we-do/cards";
 
 <Layout title="">
   <body class="text-gray-900">
+    <div
+      class="bg-background text-xs py-2 pl-4 md:pl-12 text-white flex items-center border-primary border-t-4">
+      <a href="/">
+        <span class="">Home </span>
+      </a>
+      <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
+      <a href="/">
+        <span class="">What we do </span>
+      </a>
+      <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
+      <span class="text-primary">Who we are </span>
+    </div>
     <!-- Engineering solutions -->
     <div class="max-w-3xl mx-auto p-6 space-y-8">
-      <div class="text-base md:text-4xl font-bold flex justify-center">
-        <div>Engineering solutions</div>
+      <div class="text-base md:text-4xl flex justify-center">
+        <div class="font-semibold">Engineering solutions</div>
       </div>
 
-      <p class="text-sm md:text-lg text-justify">
+      <p class="text-sm md:text-base font-light text-justify">
         We offer comprehensive engineering and technological solution`s across a
         range of specialties, including naval construction, safety engineering,
         thermal insulation, fabrication, and testing. This versatility enables
@@ -20,15 +32,20 @@ import { enginnerItemCards } from "../../screens/what-we-do/cards";
         commercial vessels.
       </p>
 
-      <p class="text-sm md:text-lg text-justify">
+      <p class="text-sm md:text-base font-light text-justify">
         In recent years, we have provided extensive services to several naval
         ships, addressing a variety of engineering challenges.
       </p>
     </div>
 
     <!-- Ships -->
-    <div class="container mx-auto py-12">
-      <div class="grid grid-cols-1 md:grid-cols-3">
+    <div class="block md:hidden container mx-auto">
+      <div class="grid grid-cols-1 py-12 md:grid-cols-3">
+        {enginnerItemCards.map((card) => <SolutionItem {...card} />)}
+      </div>
+    </div>
+    <div class="hidden md:block">
+      <div class="grid grid-cols-1 py-12 md:grid-cols-3">
         {enginnerItemCards.map((card) => <SolutionItem {...card} />)}
       </div>
     </div>
