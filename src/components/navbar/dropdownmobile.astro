@@ -4,8 +4,7 @@ const { title, lastItem, children } = Astro.props;
 ---
 
 <li class="relative">
-  <span
-    class="text-base text-center flex align-middle items-center mt-2 font-semibold"
+  <span class="text-xl text-center flex align-middle items-center font-medium"
     >{title}</span
   >
   <div
@@ -14,12 +13,12 @@ const { title, lastItem, children } = Astro.props;
       lastItem ? "lg:right-0 origin-top-right" : "lg:left-0 origin-top-left",
     ]}>
     <div
-      class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col">
+      class="p-2 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col">
       {
         children.map((item) => (
           <a
             href={item.path}
-            class="py-1.5 text-background font-medium leading-5 hover:text-blue-500 ml-2">
+            class=" text-background leading-5 hover:text-secondary text-base py-2 px-4">
             {item.title}
           </a>
         ))

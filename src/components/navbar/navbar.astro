@@ -76,7 +76,7 @@ const menuItemsMobile = [
                         lastItem={index === menuitems.length - 1}
                       />
                     </div>
-                    <div class="block md:hidden">
+                    <div class="block md:hidden mt-6">
                       <DropdownMobile
                         title={item.title}
                         children={item.children}
@@ -91,7 +91,7 @@ const menuItemsMobile = [
                       <a
                         href={item.path}
                         class="flex md:pr-3 border-r-1 items-center text-background text-sm leading-6 border-r-[1px] border-blue-900 hover:text-primary">
-                        <span class="text-sm md:my-1 my-0 md:mt-1 mt-2 "> {item.title}</span>
+                        <span class="text-xl md:text-sm my-0 md:my-1 mt-6 font-medium  md:mt-1 "> {item.title}</span>
                       </a>
                     </li>
                   )}
@@ -103,11 +103,11 @@ const menuItemsMobile = [
               <a
                 href="/contact"
                 class="flex lg:px-3 items-center text-black hover:text-blue-500">
-                <span class="text-sm mt-2 font-semibold"> Contact Us</span>
+                <span class="text-xl mt-2 font-medium"> Contact Us</span>
               </a>
             </div>
 
-            <div class="block md:hidden mt-2">{
+            <div class="block md:hidden mt-6">{
               menuItemsMobile.map((item, index) => (
                 <>
                     <li>
