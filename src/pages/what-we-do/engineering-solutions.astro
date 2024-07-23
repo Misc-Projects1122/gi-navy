@@ -4,8 +4,8 @@ import SolutionItem from "screens/what-we-do/engineering-solutions/engineerItem.
 import { enginnerItemCards } from "../../screens/what-we-do/cards";
 ---
 
-<Layout title="">
-  <body class="text-gray-900">
+<Layout title="Engineering solutions">
+  <div class="text-gray-900">
     <div
       class="bg-background text-xs py-2 pl-4 md:pl-12 text-white flex items-center border-primary md:border-t-4">
       <a href="/">
@@ -16,12 +16,12 @@ import { enginnerItemCards } from "../../screens/what-we-do/cards";
         <span class="">What we do </span>
       </a>
       <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
-      <span class="text-primary">Who we are </span>
+      <span class="text-primary">Engineering solutions</span>
     </div>
     <!-- Engineering solutions -->
-    <div class="max-w-3xl mx-auto p-6 space-y-8">
-      <div class="text-base md:text-4xl flex justify-center">
-        <div class="font-semibold">Engineering solutions</div>
+    <div class="max-w-3xl mx-auto p-0 space-y-8 mt-[50px]">
+      <div class="md:text-4xl flex justify-center">
+        <div class="text-4xl font-medium">Engineering solutions</div>
       </div>
 
       <p class="text-sm md:text-base font-light text-justify">
@@ -40,7 +40,7 @@ import { enginnerItemCards } from "../../screens/what-we-do/cards";
 
     <!-- Ships -->
     <div class="block md:hidden container mx-auto">
-      <div class="grid grid-cols-1 py-12 md:grid-cols-3">
+      <div class="grid grid-cols-1 py-16 md:grid-cols-3">
         {enginnerItemCards.map((card) => <SolutionItem {...card} />)}
       </div>
     </div>
@@ -49,5 +49,5 @@ import { enginnerItemCards } from "../../screens/what-we-do/cards";
         {enginnerItemCards.map((card) => <SolutionItem {...card} />)}
       </div>
     </div>
-  </body>
+  </div>
 </Layout>

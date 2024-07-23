@@ -8,15 +8,17 @@ import { criticalItemCards } from "screens/what-we-do/cards";
   <body class="text-gray-900">
     <!-- Starting image -->
     <div class="border-y-4 border-primary">
-      <div class="bg-background py-3 pl-12 text-white flex">
-        <a href="/"><span>Home </span></a><img
-          src="/assets/keyboard-arrow-right.svg"
-          class="w-6"
-        /><span>What we do </span><img
-          src="/assets/keyboard-arrow-right.svg"
-          class="w-6"
-        />
-        <span class="text-primary">Critical Structures</span>
+      <div
+        class="bg-background text-xs py-2 pl-4 md:pl-12 text-white flex items-center">
+        <a href="/">
+          <span class="">Home </span>
+        </a>
+        <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
+        <a href="/">
+          <span class="">What we do </span>
+        </a>
+        <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
+        <span class="text-primary">Critical Structures </span>
       </div>
       <img
         src="/assets/critical-structures.png"
@@ -26,47 +28,50 @@ import { criticalItemCards } from "screens/what-we-do/cards";
     </div>
 
     <!-- pioneers in -->
-    <div class="max-w-3xl mx-auto p-6 space-y-8 mt-8 mb-9">
-      <div class="text-base md:text-4xl font-md flex justify-center">
+    <section id="pioneer" class="max-w-3xl mx-auto mt-[74px] mb-[64px]">
+      <div
+        class="text-base md:text-4xl font-medium flex justify-center mb-[42px]">
         <div>Pioneers in</div>
-        <div class="ml-2 text-[#007BC7]">Critical Structures</div>
+        <div class="ml-2 text-secondary">Critical Structures</div>
       </div>
 
-      <p class="text-sm md:text-lg text-justify">
+      <div class="text-sm md:text-base text-justify font-light mb-[20px]">
         GI is your premier partner in advancing naval operations through the <span
-          class="text-[#007BC7] font-md"
+          class="text-[#007BC7] font-medium"
           >design, fabrication, and installation of critical structures,
           particularly helidecks,</span
         > tailored to meet the rigorous demands of modern naval vessels. As a trusted
         leader in habitat solutions for the Navy, GI-Tech has a track record of excellence,
         innovation, and reliability in delivering cutting-edge infrastructure solutions
         that enhance operational capabilities and readiness.
-      </p>
+      </div>
 
-      <p class="text-sm md:text-lg text-justify">
+      <p class="text-sm md:text-base text-justify font-light">
         Our commitment to
-        <span class="text-[#007BC7] font-md">
+        <span class="text-[#007BC7] font-medium">
           precision engineering, uncompromising quality, and unwavering
           dedication to customer satisfaction</span
         > sets us apart as the preferred choice for designing, fabricating, and installing
         critical structures for Navy vessels, with particular distinguished capabilities
         for lightweight aluminium helidecks.
       </p>
-    </div>
+    </section>
 
     <!-- why GI for critical structures -->
-    <div class="bg-dark text-white relative overflow-hidden">
-      <!-- <img
+    <section
+      id="why gi"
+      class="bg-dark text-white relative overflow-hidden pt-[72px] pb-[84px]">
+      <img
         src="/assets/web1.svg"
         alt="Customized Habitat Design"
-        class="w-full absolute z-0 opacity-[3%]"
-      /> -->
+        class="w-full absolute z-0 opacity-[2%]"
+      />
       <div
-        class="font-semibold px-4 py-2 text-white z-10 text-3xl pt-16 xl:ml-[140px] lg:ml-[40px] md:ml-16">
+        class="font-semibold px-4 py-2 text-white z-10 text-[40px] xl:ml-[140px] lg:ml-[40px] md:ml-16">
         Why GI for critical structures ?
-        <div class="border-b-4 border-primary w-44 pt-2"></div>
+        <div class="border-b-4 border-primary w-[20vw] pt-4"></div>
       </div>
-      <div class="max-w-6xl xl:mx-auto lg:mx-8 md:mx-16 mx-4 py-12">
+      <div class="max-w-6xl mx-4 md:mx-16 lg:mx-8 xl:mx-auto pt-14">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {
             criticalItemCards
@@ -83,31 +88,33 @@ import { criticalItemCards } from "screens/what-we-do/cards";
           }
         </div>
       </div>
-    </div>
+    </section>
+
     <!-- Lean More -->
-    <div class="lg:max-w-4xl lg:mx-auto lg:flex my-20">
+    <section id="learn more" class="lg:max-w-4xl lg:mx-auto lg:flex my-20">
       <img
         src="/assets/vikrant2.png"
         alt="Customized Habitat Design"
         class="w-full lg:w-[50%] lg:h-[50%] rounded-lg"
       />
       <div class="ml-8">
-        <div class="text-3xl font-semibold mb-9 mt-10">
+        <div class="text-3xl font-semibold mb-8 mt-9 font-condensed">
           GI: Delivering Unmatched Structural Solutions
         </div>
-        <p class="text-justify mb-9">
+        <p class="text-justify mb-8 font-light">
           Discover how GI's expertise in helideck structures enabled Hindustan
           Shipyard to equip the cutting edge Nistar class Diving Support Vessels
           with lightweight helideck. A first in class feature , this provides
           Indian Navy with flight ops capability to support their mission across
           different environments.
         </p>
-        <div
-          class="border-[#007BC7] border-4 text-[#007BC7] font-medium text-center w-44 px-4 py-3">
+
+        <a
+          class="text-secondary border-2 border-secondary px-3 md:px-8 py-1 md:py-[8px] text-md md:text-base inline-block font-condensed font-semibold transition duration-300 ease-in-out hover:bg-primary cursor-pointer">
           LEARN MORE
-        </div>
+        </a>
       </div>
-    </div>
+    </section>
   </body>
 </Layout>
 

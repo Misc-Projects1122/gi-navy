@@ -9,7 +9,7 @@ export const cards = [
     // gredientDirection: "r",
     // spaceDirection: "ml",
     parentStyle:
-      "relative flex flex-col md:flex-row p-4 md:ml-20 lg:ml-0 flex md:items-center md:bg-gradient-to-r from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25% ",
+      "relative flex flex-col md:flex-row p-5 md:ml-20 lg:ml-0 flex md:items-center md:bg-gradient-to-r from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25% ",
     textStyle: "text-left md:mt-0 mt-3",
     imgStyle: "md:absolute flex item md:flex-shrink-0 md:-left-36 lg:-left-36",
   },
@@ -23,7 +23,7 @@ export const cards = [
     // gredientDirection: "l",
     // spaceDirection: "mr",
     parentStyle:
-      "relative flex flex-col md:flex-row p-4 md:mr-20 lg:mr-0 flex md:items-center md:bg-gradient-to-l from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25%",
+      "relative flex flex-col md:flex-row p-5 md:mr-20 lg:mr-0 flex md:items-center md:bg-gradient-to-l from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25%",
     textStyle: "text-left md:mt-0 mt-3",
     imgStyle:
       "md:absolute flex item md:flex-shrink-0 md:-right-36 lg:-right-36",
@@ -38,7 +38,7 @@ export const cards = [
     // gredientDirection: "r",
     // spaceDirection: "ml",
     parentStyle:
-      "relative flex flex-col md:flex-row p-4 md:ml-20 lg:ml-0 flex md:items-center md:bg-gradient-to-r from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25%",
+      "relative flex flex-col md:flex-row p-5 md:ml-20 lg:ml-0 flex md:items-center md:bg-gradient-to-r from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25%",
     textStyle: "text-left md:mt-0 mt-3",
     imgStyle: "md:absolute flex item md:flex-shrink-0 md:-left-36 lg:-left-36",
   },
@@ -53,7 +53,7 @@ export const cards = [
     // spaceDirection: "mr",
 
     parentStyle:
-      "relative flex flex-col md:flex-row p-4 md:mr-20 lg:mr-0 flex md:items-center md:bg-gradient-to-l from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25%",
+      "relative flex flex-col md:flex-row p-5 md:mr-20 lg:mr-0 flex md:items-center md:bg-gradient-to-l from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25%",
     textStyle: "text-left md:mt-0 mt-3",
     imgStyle:
       "md:absolute flex item md:flex-shrink-0 md:-right-36 lg:-right-36",
@@ -68,7 +68,7 @@ export const cards = [
     // gredientDirection: "r",
     // spaceDirection: "ml",
     parentStyle:
-      "relative flex flex-col md:flex-row p-4 md:ml-20 lg:ml-0 flex md:items-center md:bg-gradient-to-r from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25%",
+      "relative flex flex-col md:flex-row p-5 md:ml-20 lg:ml-0 flex md:items-center md:bg-gradient-to-r from-[#0E1D2B] from-25% bg-gradient-to-b from-[#0E1D2B] from-25%",
     textStyle: "text-left md:mt-0 mt-3",
     imgStyle: "md:absolute flex item md:flex-shrink-0 md:-left-36 lg:-left-36",
   },
