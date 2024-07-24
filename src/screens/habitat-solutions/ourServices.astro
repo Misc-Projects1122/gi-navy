@@ -21,20 +21,24 @@ console.log(index);
     />
     <div class="flex items-center">
       <h2
-        class="block md:hidden md:text-2xl font-semibold mb-3 text-primary xs:pr-5 md:pr-0 xxs:pl-0 pl-3">
+        class="block md:hidden text-[15px] font-semibold mb-3 text-primary xs:pr-5 md:pr-0 xxs:pl-0 pl-3">
         {title}
       </h2>
     </div>
   </div>
 
   <div class={textStyle}>
-    <h2 class="hidden md:block text-[18px] font-semibold mb-3 text-primary">
+    <h2 class="hidden md:block text-[15px] font-semibold mb-3 text-primary">
       {title}
     </h2>
-    <p class="text-justify truncate md:hidden" id={`short-description${index}`}>
-      {desc.split(" ").slice(0, 10).join(" ")}
+    <p
+      class="text-justify text-[13px] truncate md:hidden"
+      id={`short-description${index}`}>
+      {desc.split(" ").slice(0, 20).join(" ")}
     </p>
-    <p class="text-justify hidden md:block" id={`full-description${index}`}>
+    <p
+      class="text-justify text-[13px] hidden md:block"
+      id={`full-description${index}`}>
       {desc}
     </p>
     <div class="md:hidden flex items-center mt-4" id={`toggle-button${index}`}>

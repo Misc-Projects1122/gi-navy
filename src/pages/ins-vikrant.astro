@@ -1,0 +1,123 @@
+---
+import Layout from "@layouts/Layout.astro";
+import CriticalItem from "screens/what-we-do/critical-structures/criticalItem.astro";
+import { criticalItemCards } from "screens/what-we-do/cards";
+---
+
+<Layout title="">
+  <body class="text-gray-900">
+    <!-- Starting image -->
+    <div class="border-b-4 md:border-y-4 border-primary">
+      <div
+        class="bg-background text-xs py-2 pl-4 md:pl-12 text-white flex items-center">
+        <a href="/">
+          <span class="">Home </span>
+        </a>
+        <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
+        <a href="/">
+          <span class="text-primary">INS Vikrant</span>
+        </a>
+      </div>
+      <img
+        src="/assets/critical-structures.png"
+        alt="Customized Habitat Design"
+        class="h-full w-full"
+      />
+    </div>
+
+    <!-- pioneers in -->
+    <section
+      id="leading"
+      class="max-w-2xl lg:max-w-3xl mx-auto space-y-6 md:space-y-8 mb-[32px] md:mb-[77px] mt-[32px] md:mt-[64px] px-[37px] md:px-0">
+      <div
+        class="text-[13px] xxs:text-[16px] md:text-[36px] font-semibold md:font-medium text-justify flex justify-center md:mb-[45px]">
+        <div class="">INS Vikrant</div>
+      </div>
+
+      <p class="text-justify text-[13px] xxs:text-sm md:text-base font-light">
+        For the Indian flagship aircraft carrier INS Vikrant, GI Tech was one of
+        the key sub-contractors for Cochin Shipyard Ltd, covering major scopes
+        for the
+        <span class="text-secondary font-medium">
+          design, supply, and installation of habitat areas
+        </span>
+        , including general and senior officers' accommodations and office spaces.
+      </p>
+
+      <p class="text-justify text-sm md:text-base font-light">
+        Our work featured
+        <span class="text-secondary font-medium">
+          modular accommodation for dry spaces and critical furniture for 11
+          compartments, technical furniture for 20 compartments, and customized
+          furniture for VIP compartments
+        </span>
+        , including the ANTE room. The project also encompassed VIP cabins, such
+        as the Admiral’s and Captain’s night, day, and sea cabins, the Officer’s
+        mess room, the ship’s library, and various ward rooms, ensuring exceptional
+        comfort and functionality throughout the vessel.
+      </p>
+    </section>
+
+    <!-- why GI for critical structures -->
+    <section
+      id="why gi"
+      class="bg-white text-white relative overflow-hidden pt-[32px] mb:pt-[72px] pb-[32px] md:pb-[84px] px-[24px]">
+      <div
+        class="font-semibold px-4 py-2 text-dark z-10 text-[20px] md:text-[40px] xl:ml-[140px] lg:ml-[40px] md:ml-16 font-condensed">
+        Project Appreciations
+        <div class="border-b-4 border-primary w-[20vw] pt-[6px] md:pt-4"></div>
+        <section class="py-6 md:py-12 xl:w-4/5">
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 text-center md:text-left">
+            <div>
+              <p class="text-[15px] md:text-[22px] font-medium">Indian Navy</p>
+              <p
+                class="text-[40px] md:text-[64px] font-semibold text-secondary font-condensed">
+                163/165
+              </p>
+            </div>
+            <div>
+              <p class="text-[15px] md:text-[22px] font-medium">
+                Cochin Shipyard Ltd
+              </p>
+              <p
+                class="text-[40px] md:text-[64px]
+                font-semibold
+                text-secondary
+                font-condensed">
+                151/165
+              </p>
+            </div>
+            <div>
+              <p class="text-[15px] md:text-[22px] font-medium md:w-2/3">
+                Best contractor Safety Award by CSL
+              </p>
+              <div class="flex justify-center mt-2 md:w-2/3">
+                <img src="/star.png" alt="5 Stars Rating" class="h-20 w-auto" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </body>
+</Layout>
+
+<script is:inline>
+  for (let index = 1; index <= 5; index++) {
+    const text = document.getElementById(`text${index}`);
+    const toggleButton = document.getElementById(`toggle-button${index}`);
+
+    toggleButton.addEventListener("click", () => {
+      if (text.classList.contains("hidden")) {
+        text.classList.remove("hidden");
+        toggleButton.innerHTML =
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-up-arrow" fill="#01BDB7"><path d="M8.12 14.71L12 10.83l3.88 3.88c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L12.7 8.71c-.39-.39-1.02-.39-1.41 0L6.7 13.3c-.39.39-.39 1.02 0 1.41.39.38 1.03.39 1.42 0z"></path></svg>';
+      } else {
+        text.classList.add("hidden");
+        toggleButton.innerHTML =
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-down-arrow" fill="#01BDB7"><path d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"></path></svg>';
+      }
+    });
+  }
+</script>
