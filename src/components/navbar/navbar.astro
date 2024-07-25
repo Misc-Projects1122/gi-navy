@@ -8,14 +8,17 @@ const menuitems = [
   {
     title: "Home",
     path: "/",
+    key: ''
   },
   {
     title: "Who we are",
     path: "/who-we-are",
+    key: 'who-we-are'
   },
   {
     title: "What we do",
     path: "#",
+    key: 'what-we-do',
     children: [
       { title: "Habitat Solutions", path: "/what-we-do/habitat-solutions" },
       {
@@ -48,6 +51,9 @@ const menuItemsMobile = [
   }
 
 ];
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+console.log("current path", currentPath);
 ---
 
 <!-- <div class=" h-full"> -->
@@ -68,10 +74,13 @@ const menuItemsMobile = [
             {
               menuitems.map((item, index) => (
                 <>
+             
                   {item.children && (
-                    <div class="hidden md:block">
+                    <div class={`hidden md:block`}>
+                         {console.log('item key', item.key)}
                       <Dropdown
                         title={item.title}
+                        active={currentPath.includes(item.key)}
                         children={item.children}
                         lastItem={index === menuitems.length - 1}
                       />
@@ -90,8 +99,8 @@ const menuItemsMobile = [
                     <li>
                       <a
                         href={item.path}
-                        class="flex md:pr-3 border-r-1 items-center text-background text-sm leading-6 border-r-[1px] border-blue-900 hover:text-primary">
-                        <span class="text-xl md:text-sm my-0 md:my-1 mt-6 font-medium  md:mt-1 "> {item.title}</span>
+                        class={`flex md:pr-3 border-r-1 items-center text-background text-sm leading-6 border-r-[1px] border-blue-900 hover:text-primary ${currentPath ===item.key && 'text-secondary'}`}>
+                        <span class="text-xl md:text-sm my-0 md:my-1 mt-6 font-medium  md:mt-1"> {item.title} </span>
                       </a>
                     </li>
                   )}
