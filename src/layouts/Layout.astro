@@ -2,9 +2,9 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import "@fontsource-variable/inter/index.css";
-import "@fontsource-variable/bricolage-grotesque";
+import { ViewTransitions } from 'astro:transitions';
 import "../styles/global.css";
+import "aos/dist/aos.css"; 
 
 export interface Props {
   title: string;
@@ -29,9 +29,6 @@ const makeTitle = title || "G1 Offshore";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -60,26 +57,22 @@ const makeTitle = title || "G1 Offshore";
         },
       }}
     />
-    <script is:inline>
+    <script>
+      import AOS from "aos";
+
+
+// runs on initial page load
       function init() {
-        animate();
+        // animate();
+        AOS.init({duration: 500, easing: 'ease-out-cubic'});
 
-        const backToTop = document.getElementById("back-to-top");
-        backToTop?.addEventListener("click", (event) => scrollToTop(event));
+        // const backToTop = document.getElementById("back-to-top");
+        // backToTop?.addEventListener("click", (event) => scrollToTop(event));
 
-        const backToPrev = document.getElementById("back-to-prev");
-        backToPrev?.addEventListener("click", () => window.history.back());
+        // const backToPrev = document.getElementById("back-to-prev");
+        // backToPrev?.addEventListener("click", () => window.history.back());
       }
 
-      function animate() {
-        const animateElements = document.querySelectorAll(".animate");
-
-        animateElements.forEach((element, index) => {
-          setTimeout(() => {
-            element.classList.add("show");
-          }, index * 150);
-        });
-      }
 
       function scrollToTop(event) {
         event.preventDefault();
@@ -89,12 +82,13 @@ const makeTitle = title || "G1 Offshore";
         });
       }
       document.addEventListener("DOMContentLoaded", () => init());
-      document.addEventListener("astro:after-swap", () => init());
+      // document.addEventListener("astro:after-swap", () => init());
     </script>
+    <ViewTransitions />
   </head>
-  <body>
+  <body transition:animate="none">
     <Navbar />
-    <main class="md:pt-[96px] pt-[72px]">
+    <main class="md:pt-[96px] pt-[72px]" transition:animate="fade">
       <slot />
     </main>
     <Footer />
