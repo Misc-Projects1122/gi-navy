@@ -5,7 +5,7 @@ import { cards } from "screens/habitat-solutions/card";
 ---
 
 <Layout title="Our Services">
-  <body class="text-gray-900">
+  <body class="text-textPrimary">
     <!-- Starting image -->
     <div class="border-b-4 md:border-y-4 border-primary">
       <div
@@ -20,11 +20,18 @@ import { cards } from "screens/habitat-solutions/card";
         <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
         <span class="text-primary">Habitat Solutions </span>
       </div>
-      <img
-        src="/assets/habitate-background.webp"
-        alt="Customized Habitat Design"
-        class="h-full w-full"
-      />
+      <div class="flex bg-textPrimary">
+        <img
+          src="/habitate/background-left.webp"
+          alt="Customized Habitat Design"
+          class="h-full w-1/2 mr-2"
+        />
+        <img
+          src="/habitate/background-right.webp"
+          alt="Customized Habitat Design"
+          class="h-full w-1/2"
+        />
+      </div>
     </div>
 
     <!-- Leading the way -->
