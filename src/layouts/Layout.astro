@@ -3,7 +3,7 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-import "@fontsource-variable/bricolage-grotesque"; 
+import "@fontsource-variable/bricolage-grotesque";
 import "../styles/global.css";
 
 export interface Props {
@@ -13,14 +13,13 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.png",
+  "/opengraph.webp",
   Astro.site
 ).toString();
 
 const { title } = Astro.props;
 
-const makeTitle = title || 'G1 Offshore'
-  
+const makeTitle = title || "G1 Offshore";
 ---
 
 <!doctype html>
@@ -49,7 +48,6 @@ const makeTitle = title || 'G1 Offshore'
         site: "@web3templates",
         card: "summary_large_image",
       }}
-     
       openGraph={{
         basic: {
           url: canonicalURL,
@@ -63,45 +61,42 @@ const makeTitle = title || 'G1 Offshore'
       }}
     />
     <script is:inline>
-        function init() {
-    animate();
+      function init() {
+        animate();
 
-    const backToTop = document.getElementById("back-to-top");
-    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+        const backToTop = document.getElementById("back-to-top");
+        backToTop?.addEventListener("click", (event) => scrollToTop(event));
 
-    const backToPrev = document.getElementById("back-to-prev");
-    backToPrev?.addEventListener("click", () => window.history.back());
+        const backToPrev = document.getElementById("back-to-prev");
+        backToPrev?.addEventListener("click", () => window.history.back());
+      }
 
-  }
+      function animate() {
+        const animateElements = document.querySelectorAll(".animate");
 
-  function animate() {
-    const animateElements = document.querySelectorAll(".animate");
+        animateElements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add("show");
+          }, index * 150);
+        });
+      }
 
-    animateElements.forEach((element, index) => {
-      setTimeout(() => {
-        element.classList.add("show");
-      }, index * 150);
-    });
-  }
-
-
-
-  function scrollToTop(event) {
-    event.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-  document.addEventListener("DOMContentLoaded", () => init());
-  document.addEventListener("astro:after-swap", () => init());
+      function scrollToTop(event) {
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+      document.addEventListener("DOMContentLoaded", () => init());
+      document.addEventListener("astro:after-swap", () => init());
     </script>
   </head>
   <body>
     <Navbar />
     <main class="md:pt-[96px] pt-[72px]">
-    <slot />
-  </main>
+      <slot />
+    </main>
     <Footer />
     <style is:global>
       /* Improve Page speed */
