@@ -25,8 +25,8 @@
     <div
       class="flex flex-col items-center md:items-start text-white text-center md:text-left py-4 md:py-0 px-7 md:px-0 bg-dark md:bg-transparent max-w-xl">
       <h1
-      data-aos="fade-zoom-in"
-        class="text-base  xxs:text-lg md:text-5xl font-semibold font-condensed">
+        data-aos="fade-zoom-in"
+        class="text-base xxs:text-lg md:text-5xl font-semibold font-condensed">
         Pioneering Engineering, Delivering Excellence
       </h1>
       <p
@@ -38,13 +38,13 @@
       </p>
       <div data-aos="fade-zoom-in" class="mt-5 md:mt-8 space-x-4">
         <a
-        href="/who-we-are"
+          href="/who-we-are"
           class="text-white border-2 border-white px-3 md:px-8 py-1 md:py-[8px] md:text-base inline-block font-condensed font-semibold transition duration-300 ease-in-out hover:bg-primary cursor-pointer">
           LEARN MORE
         </a>
 
         <a
-        href="/contact"
+          href="/contact"
           class="text-white text-md md:text-base font-medium px-3 md:px-8 py-1 md:py-[8px] border-2 border-secondary bg-secondary inline-block transition duration-300 ease-in-out hover:bg-primary hover:border-primary cursor-pointer font-condensed">
           CONTACT US
         </a>
@@ -81,30 +81,32 @@
 <script is:inline>
   const carouselItems = document.querySelectorAll(".carousel_item");
 
-  // It will be used to shift the items  by incrementing its
-  // value every 2 seconds and multiplying it by 100
-  let i = 1;
+  let i = 0; // start with the first image
+  let delay = 1000; // initial delay for the first image
 
-  // Running the condition every 2 seconds using setInterval
-  setInterval(() => {
-    // Accessing All the carousel Items
+  // Function to move carousel items
+  const moveCarousel = () => {
     Array.from(carouselItems).forEach((item, index) => {
-      // Checking if the value of i is less than the
-      // number of carousel items, if it is true,
-      // move all the carousel items 100% towards left
       if (i < carouselItems.length) {
         item.style.transform = `translateX(-${i * 100}%)`;
       }
     });
 
-    // If the the value of i is less than the number of
-    // Carousel items, then increment the value of i by 1
-    // Otherwise set the value of i to 0 if it becomes greater
-    // than the number of carousel items
-    if (i < carouselItems.length) {
+    if (i < carouselItems.length - 1) {
       i++;
     } else {
       i = 0;
     }
-  }, 4000);
+
+    // Adjust the delay for the next interval
+    if (i === 1) {
+      delay = 4000; // 2 seconds for the second and third images
+    } else {
+      delay = 2000; // 1 second for other images
+    }
+    setTimeout(moveCarousel, delay);
+  };
+
+  // Start the carousel
+  setTimeout(moveCarousel, delay);
 </script>

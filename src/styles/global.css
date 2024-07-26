@@ -10,7 +10,6 @@ body {
   height: revert-layer;
 }
 
-
 .animate {
   @apply opacity-0 translate-y-3;
   @apply transition-all duration-700 ease-out;
