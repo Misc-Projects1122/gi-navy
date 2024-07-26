@@ -101,11 +101,11 @@ import Layout from "@layouts/Layout.astro";
   <section
     id="leadership"
     class="w-full bg-dark text-white relative overflow-hidden">
-    <img
+    <!-- <img
       src="/assets/dark-hex.webp"
       alt="Customized Habitat Design"
-      class="w-full h-full absolute z-0 opacity-[10%] bg-cover"
-    />
+      class="w-full absolute z-0 opacity-[10%] bg-cover bg-repeat-y"
+    /> -->
     <div class="px-10 mx-auto lg:px-40 py-[50px] md:py-[88px] container">
       <h2
         data-aos="fade-up"
@@ -234,3 +234,22 @@ import Layout from "@layouts/Layout.astro";
     </div>
   </section>
 </Layout>
+
+<style>
+  #leadership::before {
+    content: "";
+    background: url("/assets/dark-hex.webp") repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2; /* Adjust opacity as needed */
+    z-index: 0;
+  }
+  #leadership .container {
+    position: relative;
+    z-index: 1;
+  }
+</style>
