@@ -1,13 +1,9 @@
-.half-border-top {
-  position: relative;
+/* navbar.css */
+
+.navbar-mobile {
+  transform: translateX(-10%);
 }
 
-.half-border-top::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 1px;
-  background: red;
+.navbar-mobile.translate-x-full {
+  transform: translateX(0);
 }

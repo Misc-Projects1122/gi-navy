@@ -24,12 +24,12 @@ import { cards } from "screens/habitat-solutions/card";
         <img
           src="/habitate/background-left.webp"
           alt="Customized Habitat Design"
-          class="h-full w-1/2 mr-2"
+          class="h-full w-1/2 border-r-2 border-dark"
         />
         <img
           src="/habitate/background-right.webp"
           alt="Customized Habitat Design"
-          class="h-full w-1/2"
+          class="h-full w-1/2 border-l-2 border-dark"
         />
       </div>
     </div>
@@ -159,12 +159,12 @@ import { cards } from "screens/habitat-solutions/card";
         short.classList.remove("hidden");
         full.classList.add("hidden");
         toggleButton.innerHTML =
-          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-up-arrow" fill="#01BDB7"><path d="M8.12 14.71L12 10.83l3.88 3.88c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L12.7 8.71c-.39-.39-1.02-.39-1.41 0L6.7 13.3c-.39.39-.39 1.02 0 1.41.39.38 1.03.39 1.42 0z"></path></svg>';
+          'Read more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-down-arrow" fill="#01BDB7"><path d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"></path></svg>';
       } else {
         short.classList.add("hidden");
         full.classList.remove("hidden");
         toggleButton.innerHTML =
-          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-down-arrow" fill="#01BDB7"><path d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"></path></svg>';
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-up-arrow" fill="#01BDB7"><path d="M8.12 14.71L12 10.83l3.88 3.88c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L12.7 8.71c-.39-.39-1.02-.39-1.41 0L6.7 13.3c-.39.39-.39 1.02 0 1.41.39.38 1.03.39 1.42 0z"></path></svg>';
       }
     });
   }
