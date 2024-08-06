@@ -2,9 +2,9 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 import "../styles/global.css";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
 
 export interface Props {
   title: string;
@@ -57,14 +57,17 @@ const makeTitle = title || "G1 Offshore";
         },
       }}
     />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
     <script>
       import AOS from "aos";
 
-
-// runs on initial page load
+      // runs on initial page load
       function init() {
         // animate();
-        AOS.init({duration: 500, easing: 'ease-out-cubic'});
+        AOS.init({ duration: 500, easing: "ease-out-cubic" });
 
         // const backToTop = document.getElementById("back-to-top");
         // backToTop?.addEventListener("click", (event) => scrollToTop(event));
@@ -72,8 +75,6 @@ const makeTitle = title || "G1 Offshore";
         // const backToPrev = document.getElementById("back-to-prev");
         // backToPrev?.addEventListener("click", () => window.history.back());
       }
-
-
 
       function scrollToTop(event) {
         event.preventDefault();

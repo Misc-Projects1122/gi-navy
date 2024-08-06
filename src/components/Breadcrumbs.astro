@@ -1,0 +1,33 @@
+---
+// Breadcrumbs.astro
+
+interface Breadcrumb {
+  title: string;
+  path?: string;
+  isActive?: boolean;
+}
+
+const { items } = Astro.props;
+---
+
+<div
+  class="bg-background text-xs py-2 pl-4 md:pl-24 text-white flex items-center">
+  {
+    items.map((item, index) => (
+      <>
+        {item.path ? (
+          <a href={item.path}>
+            <span class={item.isActive ? "text-primary" : ""}>
+              {item.title}
+            </span>
+          </a>
+        ) : (
+          <span class={item.isActive ? "text-primary" : ""}>{item.title}</span>
+        )}
+        {index < items.length - 1 && (
+          <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
+        )}
+      </>
+    ))
+  }
+</div>

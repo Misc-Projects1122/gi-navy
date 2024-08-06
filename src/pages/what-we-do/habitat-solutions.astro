@@ -2,24 +2,21 @@
 import Layout from "@layouts/Layout.astro";
 import OurServices from "screens/habitat-solutions/ourServices.astro";
 import { cards } from "screens/habitat-solutions/card";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+  { title: "Home", path: "/" },
+  { title: "What we do", path: "/" },
+  { title: "Habitat Solutions", isActive: true },
+];
 ---
 
 <Layout title="Our Services">
   <body class="text-textPrimary">
     <!-- Starting image -->
     <div class="border-b-4 md:border-y-4 border-primary">
-      <div
-        class="bg-background text-xs py-2 pl-4 md:pl-12 text-white flex items-center">
-        <a href="/">
-          <span class="">Home </span>
-        </a>
-        <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
-        <a href="/">
-          <span class="">What we do </span>
-        </a>
-        <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
-        <span class="text-primary">Habitat Solutions </span>
-      </div>
+      <Breadcrumbs items={breadcrumbItems} />
+
       <div class="flex bg-textPrimary">
         <img
           src="/habitate/background-left.webp"
@@ -116,7 +113,7 @@ import { cards } from "screens/habitat-solutions/card";
         <a
           data-aos="fade-up"
           href="/ins-vikrant"
-          class="hidden md:inline-block text-secondary border-2 border-secondary px-3 md:px-8 py-1 md:py-[8px] text-sm md:text-base font-condensed font-semibold transition duration-300 ease-in-out hover:bg-primary cursor-pointer">
+          class="hidden md:inline-block text-secondary border-2 border-secondary px-3 md:px-8 py-1 md:py-[8px] text-sm md:text-base font-condensed font-semibold transition duration-300 ease-in-out hover:border-primary hover:text-primary cursor-pointer">
           LEARN MORE
         </a>
       </div>

@@ -1,17 +1,17 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+  { title: "Home", path: "/" },
+  { title: "Who we are", isActive: true },
+];
 ---
 
 <Layout title="Who we are">
   <div class="relative border-b-4 md:border-y-4 border-primary">
-    <div
-      class="bg-background text-xs py-2 pl-4 md:pl-12 text-white flex items-center">
-      <a href="/">
-        <span class="">Home </span>
-      </a>
-      <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
-      <span class="text-primary">Who we are </span>
-    </div>
+    <Breadcrumbs items={breadcrumbItems} />
+
     <div id="hero-banner" class="relative">
       <img
         src="/what-we-are-background.webp"

@@ -14,12 +14,12 @@ const { imgSrc, altText, title, desc, index } = Astro.props;
   </h2>
   <p
     class="mt-2 px-6 md:block hidden md:px-0 text-[12px] text-justify leading-5"
-    id=`text${index}`>
+    id={`text${index}`}>
     {desc}
   </p>
   <div
     class="h-8 border-t-2 flex justify-center border-[#0b2438] mt-3 items-center md:hidden"
-    id=`toggle-button${index}`>
+    id={`toggle-button${index}`}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -33,3 +33,28 @@ const { imgSrc, altText, title, desc, index } = Astro.props;
     >
   </div>
 </div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    /* Ensure DOM is fully loaded */
+    for (let index = 1; index <= 5; index++) {
+      // Adjust the upper limit as needed
+      const text = document.getElementById(`text${index}`);
+      const toggleButton = document.getElementById(`toggle-button${index}`);
+
+      toggleButton.addEventListener("click", () => {
+        if (text.classList.contains("hidden")) {
+          text.classList.remove("hidden"); /* Remove hidden class */
+          text.classList.add("expanded"); /* Add expanded class */
+          toggleButton.innerHTML =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-up-arrow" fill="#01BDB7"><path d="M8.12 14.71L12 10.83l3.88 3.88c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L12.7 8.71c-.39-.39-1.02-.39-1.41 0L6.7 13.3c-.39.39-.39 1.02 0 1.41.39.38 1.03.39 1.42 0z"></path></svg>';
+        } else {
+          text.classList.add("hidden"); /* Add hidden class */
+          text.classList.remove("expanded"); /* Remove expanded class */
+          toggleButton.innerHTML =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-down-arrow" fill="#01BDB7"><path d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"></path></svg>';
+        }
+      });
+    }
+  });
+</script>

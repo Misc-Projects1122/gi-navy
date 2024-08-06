@@ -2,24 +2,21 @@
 import Layout from "@layouts/Layout.astro";
 import CriticalItem from "screens/what-we-do/critical-structures/criticalItem.astro";
 import { criticalItemCards } from "screens/what-we-do/cards";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+  { title: "Home", path: "/" },
+  { title: "What we do", path: "/" },
+  { title: "Critical Structures", isActive: true },
+];
 ---
 
 <Layout title="">
   <body class="text-gray-900">
     <!-- Starting image -->
     <div class="border-b-4 md:border-y-4 border-primary">
-      <div
-        class="bg-background text-xs py-2 pl-4 md:pl-12 text-white flex items-center">
-        <a href="/">
-          <span class="">Home </span>
-        </a>
-        <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
-        <a href="/">
-          <span class="">What we do </span>
-        </a>
-        <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
-        <span class="text-primary">Critical Structures </span>
-      </div>
+      <Breadcrumbs items={breadcrumbItems} />
+
       <img
         src="/assets/critical-structures.webp"
         alt="Customized Habitat Design"
@@ -138,17 +135,17 @@ import { criticalItemCards } from "screens/what-we-do/cards";
       <div
         class="flex md:hidden justify-center relative group w-full mb-2 lg:mb-0 lg:h-[400px] xl:h-[500px] overflow-hidden">
         <img
-          src="/assets/IAC-Vikrant.webp"
+          src="/assets/vikrant2.webp"
           alt="Customized Habitat Design"
           class="w-12/12 lg:w-full lg:object-fill transition-transform duration-300 group-hover:scale-105"
         />
         <div
           class="text-[13px] xxs:text-[15px] font-semibold absolute bottom-8 left-2 xxs:left-6 md:left-32 lg:left-6 text-white transition-all duration-300 group-hover:opacity-0">
-          Upgrading Habitability:
+          GI Tech: Delivering Unmatched
         </div>
         <div
           class="text-[11px] xxs:text-[13px] font-semibold absolute bottom-2 md:bottom-6 left-2 xxs:left-6 md:left-32 lg:left-6 text-white transition-all duration-300 group-hover:opacity-0">
-          A Game-Changing Partnership with GI
+          Structural Solutions
         </div>
       </div>
     </section>

@@ -2,22 +2,19 @@
 import Layout from "@layouts/Layout.astro";
 import SolutionItem from "screens/what-we-do/engineering-solutions/engineerItem.astro";
 import { enginnerItemCards } from "../../screens/what-we-do/cards";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+  { title: "Home", path: "/" },
+  { title: "What we do", path: "/" },
+  { title: "Engineering solutions", isActive: true },
+];
 ---
 
 <Layout title="Engineering solutions">
   <div class="text-gray-900">
-    <div
-      class="bg-background text-xs py-2 pl-4 md:pl-12 text-white flex items-center border-primary md:border-t-4">
-      <a href="/">
-        <span class="">Home </span>
-      </a>
-      <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
-      <a href="/">
-        <span class="">What we do </span>
-      </a>
-      <img src="/assets/keyboard-arrow-right.svg" class="w-4" />
-      <span class="text-primary">Engineering solutions</span>
-    </div>
+    <Breadcrumbs items={breadcrumbItems} />
+
     <!-- Engineering solutions -->
     <section
       id="leading"
@@ -52,7 +49,7 @@ import { enginnerItemCards } from "../../screens/what-we-do/cards";
       </div>
     </div>
     <div class="hidden md:block">
-      <div class="grid grid-cols-1 py-12 md:grid-cols-3">
+      <div class="grid grid-cols-1 py-12 md:grid-cols-3 ]">
         {enginnerItemCards.map((card) => <SolutionItem {...card} />)}
       </div>
     </div>
