@@ -20,7 +20,7 @@
         and authorized partner, empowering us to serve all four Naval Commands:
       </p>
       <ul
-        data-aos="fade-up"
+        data-aos="fade-up" 
         class="mb-6 text-[13px] md:text-[16px] leading-relaxed font-semibold">
         <li class="mb-2">Western Naval Command - Mumbai</li>
         <li class="mb-2">Eastern Naval Command - Visakhapatnam</li>
@@ -48,15 +48,35 @@
         <img
           src="/india-map.webp"
           alt="Indian Navy Commands"
-          class="w-full lg:w-3/4"
+          class="w-full lg:w-3/4 relative"
         />
-        <div class="inset-0 opacity-60">
+        <div class="inset-0 ">
           <img
             src="/location.png"
-            class="h-9 w-9 absolute right-60 bottom-[185px]"
+            class="h-9 w-9 absolute bottom-[185px] right-60"
           />
+          <img
+          src="/location.png"
+          class="h-9 w-9 absolute bottom-[192px] left-[123px]"
+        />
+        <img
+        src="/location.png"
+        class="h-9 w-9 absolute bottom-[47px] left-[178px]"
+      />
+      <img
+      src="/location.png"
+      id="location-icon", 
+      class="h-10 w-10 absolute bottom-[85px] right-[112px] origin-bottom"
+       />
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  window.addEventListener('load', () => {
+    const icon = document.getElementById('location-icon');
+    icon.classList.add('animate-pop-up');
+  });
+</script>
