@@ -23,6 +23,3 @@ html.scrolled #back-to-top {
   @apply opacity-100 pointer-events-auto;
 }
 
-.transform-origin-bottom {
-  transform-origin: bottom center;
-}
