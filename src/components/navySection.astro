@@ -1,16 +1,12 @@
----
-// NavySection.astro
----
-
 <div
-  class="relative bg-cover bg-center text-white bg-black py-[34px] md:py-12 lg:py-20"
+  class="relative bg-cover bg-center text-white py-[34px] md:py-12 lg:py-20"
   style="background-image: url('/india-map-background.webp');">
   <div
     class="relative max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center px-10 lg:px-16">
     <div data-aos="fade-up" class="lg:w-2/3 mt-10 lg:mt-0">
       <h2
         class="hidden lg:block text-[40px] font-semibold mb-3 leading-tight font-condensed">
-        Official Solutions Provider : Indian Navy
+        Official Solutions Provider: Indian Navy
       </h2>
       <div class="hidden lg:block border-b-4 border-primary w-[50%] mb-8"></div>
       <p class="mb-6 text-[13px] md:text-[16px] leading-relaxed text-justify">
@@ -20,12 +16,18 @@
         and authorized partner, empowering us to serve all four Naval Commands:
       </p>
       <ul
-        data-aos="fade-up" 
+        id="naval-list"
         class="mb-6 text-[13px] md:text-[16px] leading-relaxed font-semibold">
-        <li class="mb-2">Western Naval Command - Mumbai</li>
-        <li class="mb-2">Eastern Naval Command - Visakhapatnam</li>
-        <li class="mb-2">Southern Naval Command - Kochi</li>
-        <li class="text-primary font-extrabold">
+        <li id="western-command" class="mb-2 cursor-pointer hover:underline">
+          Western Naval Command - Mumbai
+        </li>
+        <li id="eastern-command" class="mb-2 cursor-pointer hover:underline">
+          Eastern Naval Command - Visakhapatnam
+        </li>
+        <li id="southern-command" class="mb-2 cursor-pointer hover:underline">
+          Southern Naval Command - Kochi
+        </li>
+        <li id="tri-services-command" class="cursor-pointer hover:underline">
           Tri-services Command - Port Blair
         </li>
       </ul>
@@ -44,43 +46,87 @@
       <div class="block lg:hidden border-b-4 border-teal-400 w-[50%] mb-4">
       </div>
 
-      <div class="w-full mt-8 lg:mt-0 flex justify-center">
+      <div class="w-full mt-8 lg:mt-0 flex justify-center relative">
         <img
           src="/india-map.webp"
           alt="Indian Navy Commands"
-          class="w-full lg:w-3/4 relative"
+          class="w-full lg:w-3/4"
         />
-        <div class="inset-0 ">
-          <img
-            src="/location.png"
-            class="h-9 w-9 absolute bottom-[185px] right-60 origin-bottom  location-icon"
-          />
-          <img
-          id="location-icon", 
-          src="/location.png"
-          class="h-9 w-9 absolute bottom-[192px] left-[123px] origin-bottom delay-1000 location-icon"
-        />
-        <img
-        id="location-icon", 
-        src="/location.png"
-        class="h-9 w-9 absolute bottom-[47px] left-[178px] origin-bottom delay-[2000ms] location-icon"
-      />
-      <img
-      src="/location.png"
-      id="location-icon", 
-      class="h-10 w-10 absolute bottom-[85px] right-[112px] origin-bottom delay-[3000ms] location-icon"
-       />
-        </div>
+        <svg
+          id="icon-western-command"
+          class="location-icon h-9 w-9 absolute bottom-[185px] right-60"
+          width="25"
+          height="36"
+          viewBox="0 0 25 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.4926 0C5.6041 0 0 5.60492 0 12.4936C0 19.1246 11.3348 34.6168 11.8174 35.2728L12.2678 35.8858C12.3205 35.9579 12.4044 36 12.4926 36C12.5822 36 12.6656 35.9579 12.7188 35.8858L13.1689 35.2728C13.6518 34.6168 24.9863 19.1246 24.9863 12.4936C24.9863 5.60492 19.3813 0 12.4926 0ZM12.4926 8.01842C14.9608 8.01842 16.9678 10.0255 16.9678 12.4936C16.9678 14.9604 14.9607 16.9688 12.4926 16.9688C10.0259 16.9688 8.01742 14.9604 8.01742 12.4936C8.01742 10.0255 10.0258 8.01842 12.4926 8.01842Z"
+            fill="white"></path>
+        </svg>
+        <svg
+          id="icon-eastern-command"
+          class="location-icon h-9 w-9 absolute bottom-[192px] left-[123px]"
+          width="25"
+          height="36"
+          viewBox="0 0 25 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.4926 0C5.6041 0 0 5.60492 0 12.4936C0 19.1246 11.3348 34.6168 11.8174 35.2728L12.2678 35.8858C12.3205 35.9579 12.4044 36 12.4926 36C12.5822 36 12.6656 35.9579 12.7188 35.8858L13.1689 35.2728C13.6518 34.6168 24.9863 19.1246 24.9863 12.4936C24.9863 5.60492 19.3813 0 12.4926 0ZM12.4926 8.01842C14.9608 8.01842 16.9678 10.0255 16.9678 12.4936C16.9678 14.9604 14.9607 16.9688 12.4926 16.9688C10.0259 16.9688 8.01742 14.9604 8.01742 12.4936C8.01742 10.0255 10.0258 8.01842 12.4926 8.01842Z"
+            fill="white"></path>
+        </svg>
+        <svg
+          id="icon-southern-command"
+          class="location-icon h-9 w-9 absolute bottom-[47px] left-[178px]"
+          width="25"
+          height="36"
+          viewBox="0 0 25 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.4926 0C5.6041 0 0 5.60492 0 12.4936C0 19.1246 11.3348 34.6168 11.8174 35.2728L12.2678 35.8858C12.3205 35.9579 12.4044 36 12.4926 36C12.5822 36 12.6656 35.9579 12.7188 35.8858L13.1689 35.2728C13.6518 34.6168 24.9863 19.1246 24.9863 12.4936C24.9863 5.60492 19.3813 0 12.4926 0ZM12.4926 8.01842C14.9608 8.01842 16.9678 10.0255 16.9678 12.4936C16.9678 14.9604 14.9607 16.9688 12.4926 16.9688C10.0259 16.9688 8.01742 14.9604 8.01742 12.4936C8.01742 10.0255 10.0258 8.01842 12.4926 8.01842Z"
+            fill="white"></path>
+        </svg>
+        <svg
+          id="icon-tri-services-command"
+          class="location-icon h-10 w-10 absolute bottom-[85px] right-[112px]"
+          width="25"
+          height="36"
+          viewBox="0 0 25 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.4926 0C5.6041 0 0 5.60492 0 12.4936C0 19.1246 11.3348 34.6168 11.8174 35.2728L12.2678 35.8858C12.3205 35.9579 12.4044 36 12.4926 36C12.5822 36 12.6656 35.9579 12.7188 35.8858L13.1689 35.2728C13.6518 34.6168 24.9863 19.1246 24.9863 12.4936C24.9863 5.60492 19.3813 0 12.4926 0ZM12.4926 8.01842C14.9608 8.01842 16.9678 10.0255 16.9678 12.4936C16.9678 14.9604 14.9607 16.9688 12.4926 16.9688C10.0259 16.9688 8.01742 14.9604 8.01742 12.4936C8.01742 10.0255 10.0258 8.01842 12.4926 8.01842Z"
+            fill="white"></path>
+        </svg>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  window.addEventListener('load', () => {
-    const icons = document.querySelectorAll('.location-icon');
-    icons.forEach(icon => {
-    icon.classList.add('animate-pop-up');
-});
+  window.addEventListener("load", () => {
+    const listItems = document.querySelectorAll("#naval-list li");
+    const icons = document.querySelectorAll(".location-icon");
+
+    listItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        // Remove highlighting and animation from all items and icons
+        listItems.forEach((li) =>
+          li.classList.remove("text-primary", "font-extrabold")
+        );
+        icons.forEach((icon) => {
+          icon.querySelector("path").setAttribute("fill", "white");
+          icon.classList.remove("animate-pop-up");
+        });
+
+        // Add highlighting and animation to the clicked item and corresponding icon
+        item.classList.add("text-primary", "font-extrabold");
+        const icon = document.querySelector(`#icon-${item.id}`);
+        icon.querySelector("path").setAttribute("fill", "#01BDB7"); // Change color to 'text-primary' color
+        icon.classList.add("animate-pop-up");
+      });
+    });
   });
 </script>
