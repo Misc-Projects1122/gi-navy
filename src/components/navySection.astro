@@ -105,14 +105,15 @@
   </div>
 </div>
 
-<script>
+<script is:inline>
   window.addEventListener("load", () => {
     const listItems = document.querySelectorAll("#naval-list li");
     const icons = document.querySelectorAll(".location-icon");
 
     listItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        // Remove highlighting and animation from all items and icons
+      item.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevents the event from bubbling up
+
         listItems.forEach((li) =>
           li.classList.remove("text-primary", "font-extrabold")
         );
@@ -121,10 +122,9 @@
           icon.classList.remove("animate-pop-up");
         });
 
-        // Add highlighting and animation to the clicked item and corresponding icon
         item.classList.add("text-primary", "font-extrabold");
         const icon = document.querySelector(`#icon-${item.id}`);
-        icon.querySelector("path").setAttribute("fill", "#01BDB7"); // Change color to 'text-primary' color
+        icon.querySelector("path").setAttribute("fill", "#01BDB7");
         icon.classList.add("animate-pop-up");
       });
     });
