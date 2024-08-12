@@ -1,20 +1,19 @@
-
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
       animation: {
-        'pop-up': 'popup 1s ease-out',
+        "pop-up": "popup 1s ease-out",
       },
       keyframes: {
         popup: {
-          '0%': {
-            transform: 'scale(0)',
-            opacity: '0',
+          "0%": {
+            transform: "scale(0)",
+            opacity: "0",
           },
-          '100%': {
-            transform: 'scale(1)',
-            opacity: '1',
+          "100%": {
+            transform: "scale(1)",
+            opacity: "1",
           },
         },
       },
@@ -33,7 +32,7 @@ module.exports = {
         background: "#0E1D2B",
         primary: "#01BDB7",
         secondary: "#007BC7",
-        textPrimary:'#0E1D2B'
+        textPrimary: "#0E1D2B",
       },
       dropShadow: {
         white: "5px 0 0 #ffffff",
@@ -42,7 +41,7 @@ module.exports = {
     },
     screens: {
       xxs: "375px",
-      xs: "425px", // min-width
+      xs: "425px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
