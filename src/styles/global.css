@@ -23,3 +23,9 @@ html.scrolled #back-to-top {
   @apply opacity-100 pointer-events-auto;
 }
 
+@font-face {
+  font-family: "Serifa BT";
+  src: url("/fonts/SERIFAB.TTF") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

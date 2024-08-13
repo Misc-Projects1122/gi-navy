@@ -22,6 +22,7 @@ module.exports = {
         // barlow: ["Barlow Condensed", "sans-serif"],
         sans: ["Poppins", "sans-serif"],
         condensed: ["Barlow Condensed", "sans-serif"],
+        serifa: ["Serifa BT", "serif"],
       },
       lineHeight: {
         "extra-loose": "70px",
