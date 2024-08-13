@@ -152,8 +152,7 @@ const $$Contact = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<div class="flex flex-col min-h-screen"> ${renderComponent($$result, "Layout", $$Layout, { "title": "Contact Us" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Breadcrumbs", $$Breadcrumbs, { "items": breadcrumbItems })} <div class="md:grid md:grid-cols-2 md:gap-10 md:px-10 lg:px-40 xl:px-60 flex flex-col-reverse mt-[32px] md:mt-[90px] mb-[32px] md:mb-[126px]"> <div class="xs:m-5 m-3 md:m-0 flex flex-col"> <div class="text-3xl text-dark font-semibold font-condensed hidden md:block mb-[32px]">
 Get in touch
 </div> <p class="text-sm md:text-base leading-relaxed text-dark text-justify font-light mb-[32px] px-4 md:px-0">
-Thank you for your interest in <span class="font-serifa">GI</span>. As
-          a leading defence contractor for Navy Ships, we are committed to
+Thank you for your interest in <span class="font-serifa font-bold">GI</span>. As a leading defence contractor for Navy Ships, we are committed to
           providing our clients with the highest quality services. Whether you
           need habitability solutions, structural repairs and upgrades or
           defence contracting services, we are here to help. Please contact us
