@@ -9,6 +9,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   output: "server",
   adapter: vercel(),
-  site: "https://astroship.web3templates.com",
+  site: "https://g1-navy.vercel.app",
   integrations: [tailwind(), mdx(), sitemap(), react()],
 });
