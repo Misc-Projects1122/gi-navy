@@ -119,13 +119,13 @@
         );
         icons.forEach((icon) => {
           icon.querySelector("path").setAttribute("fill", "white");
-          icon.classList.remove("animate-pop-up");
+          icon.classList.remove("transform", "scale-125", "transition-transform", "duration-300");
         });
 
         item.classList.add("text-primary", "font-extrabold");
         const icon = document.querySelector(`#icon-${item.id}`);
         icon.querySelector("path").setAttribute("fill", "#01BDB7");
-        icon.classList.add("animate-pop-up");
+        icon.classList.add("transform", "scale-125", "transition-transform", "duration-300");
       });
     });
   });
