@@ -1,8 +1,8 @@
 /* empty css                                 */
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_cuKTT-NG.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_BdMBmk4Z.mjs';
-import { $ as $$Breadcrumbs } from '../chunks/Breadcrumbs_G2WeIkvr.mjs';
+import { $ as $$Layout } from '../chunks/Layout_C0YCuAP6.mjs';
+import { $ as $$Breadcrumbs } from '../chunks/Breadcrumbs_oo8R5nI5.mjs';
 export { renderers } from '../renderers.mjs';
 
 var __freeze = Object.freeze;
@@ -33,9 +33,9 @@ design, supply, and installation of two helideck structures across INS
         G1 also provided support during testing , commissioning and on-board training
         at HSL premises.
 </p> </section> ` }));
-}, "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/nistar-class-dsv.astro", void 0);
+}, "/Users/veestar/veestar/gi-navy/src/pages/nistar-class-dsv.astro", void 0);
 
-const $$file = "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/nistar-class-dsv.astro";
+const $$file = "/Users/veestar/veestar/gi-navy/src/pages/nistar-class-dsv.astro";
 const $$url = "/nistar-class-dsv";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

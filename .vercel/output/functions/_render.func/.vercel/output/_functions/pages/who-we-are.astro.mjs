@@ -1,8 +1,8 @@
 /* empty css                                 */
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_cuKTT-NG.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_BdMBmk4Z.mjs';
-import { $ as $$Breadcrumbs } from '../chunks/Breadcrumbs_G2WeIkvr.mjs';
+import { $ as $$Layout } from '../chunks/Layout_C0YCuAP6.mjs';
+import { $ as $$Breadcrumbs } from '../chunks/Breadcrumbs_oo8R5nI5.mjs';
 /* empty css                                      */
 export { renderers } from '../renderers.mjs';
 
@@ -81,9 +81,9 @@ Harvard Business School
 </p> <p class="hidden xs:block text-xs font-condensed xl:text-sm text-white xl:mb-1" data-astro-cid-ymju6xud>
 IIT Kanpur
 </p> </div> </div> </div> </div> </section> ` })} `;
-}, "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/who-we-are.astro", void 0);
+}, "/Users/veestar/veestar/gi-navy/src/pages/who-we-are.astro", void 0);
 
-const $$file = "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/who-we-are.astro";
+const $$file = "/Users/veestar/veestar/gi-navy/src/pages/who-we-are.astro";
 const $$url = "/who-we-are";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

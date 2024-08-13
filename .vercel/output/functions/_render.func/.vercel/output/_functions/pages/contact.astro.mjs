@@ -3,8 +3,8 @@ import { a as createComponent, r as renderTemplate, m as maybeRenderHead, d as r
 import 'kleur/colors';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
-import { $ as $$Layout } from '../chunks/Layout_BdMBmk4Z.mjs';
-import { $ as $$Breadcrumbs } from '../chunks/Breadcrumbs_G2WeIkvr.mjs';
+import { $ as $$Layout } from '../chunks/Layout_C0YCuAP6.mjs';
+import { $ as $$Breadcrumbs } from '../chunks/Breadcrumbs_oo8R5nI5.mjs';
 export { renderers } from '../renderers.mjs';
 
 const Loader = () => /* @__PURE__ */ jsxs(
@@ -162,9 +162,9 @@ Thank you for your interest in <span class="font-serifa font-bold">GI</span>. As
 </p> <div class="flex justify-center md:justify-start gap-5"> <a href="#" class="hover:underline"><img src="/assets/linkedin.svg" alt="LinkedIn" class="h-8 bg-white"></a> <a href="#" class="hover:underline"><img src="/assets/whatsapp.svg" alt="WhatsApp" class="h-8 bg-white"></a> <a href="#" class="hover:underline"><img src="/assets/x.svg" alt="Other" class="h-8 bg-white"></a> </div> </div> <div class="mx-7"> <div class="md:hidden text-[16px] text-dark font-semibold text-center mb-6">
 Get in touch
 </div> <!-- <Contactform />  --> ${renderComponent($$result2, "Contactform", SubscribeForm, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@components/ContactForm.tsx", "client:component-export": "default" })} </div> </div> ` })} </div>`;
-}, "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/contact.astro", void 0);
+}, "/Users/veestar/veestar/gi-navy/src/pages/contact.astro", void 0);
 
-const $$file = "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/contact.astro";
+const $$file = "/Users/veestar/veestar/gi-navy/src/pages/contact.astro";
 const $$url = "/contact";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

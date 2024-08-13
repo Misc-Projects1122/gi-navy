@@ -65,9 +65,9 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     </div>
   </Container>
 </Layout> -->`;
-}, "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/about.astro", void 0);
+}, "/Users/veestar/veestar/gi-navy/src/pages/about.astro", void 0);
 
-const $$file = "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/about.astro";
+const $$file = "/Users/veestar/veestar/gi-navy/src/pages/about.astro";
 const $$url = "/about";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

@@ -1,8 +1,8 @@
 /* empty css                                 */
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_cuKTT-NG.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_BdMBmk4Z.mjs';
-import { $ as $$Breadcrumbs } from '../chunks/Breadcrumbs_G2WeIkvr.mjs';
+import { $ as $$Layout } from '../chunks/Layout_C0YCuAP6.mjs';
+import { $ as $$Breadcrumbs } from '../chunks/Breadcrumbs_oo8R5nI5.mjs';
 export { renderers } from '../renderers.mjs';
 
 var __freeze = Object.freeze;
@@ -49,9 +49,9 @@ Cochin Shipyard Ltd
 </p> </div> <div data-aos="fade-up"> <p class="text-[15px] md:text-[22px] font-semibold md:font-medium md:w-2/3">
 Best contractor Safety Award by CSL
 </p> <div class="flex justify-center mt-2 md:w-2/3"> <img src="/star.webp" alt="5 Stars Rating" class="h-20 w-auto"> </div> </div> </div> </section> </div> </section> ` }));
-}, "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/ins-vikrant.astro", void 0);
+}, "/Users/veestar/veestar/gi-navy/src/pages/ins-vikrant.astro", void 0);
 
-const $$file = "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/ins-vikrant.astro";
+const $$file = "/Users/veestar/veestar/gi-navy/src/pages/ins-vikrant.astro";
 const $$url = "/ins-vikrant";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

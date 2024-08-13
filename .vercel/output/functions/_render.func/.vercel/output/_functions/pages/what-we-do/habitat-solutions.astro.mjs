@@ -1,9 +1,9 @@
 /* empty css                                    */
 import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, d as renderComponent } from '../../chunks/astro/server_cuKTT-NG.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../../chunks/Layout_BdMBmk4Z.mjs';
+import { $ as $$Layout } from '../../chunks/Layout_C0YCuAP6.mjs';
 import 'clsx';
-import { $ as $$Breadcrumbs } from '../../chunks/Breadcrumbs_G2WeIkvr.mjs';
+import { $ as $$Breadcrumbs } from '../../chunks/Breadcrumbs_oo8R5nI5.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro = createAstro("https://astroship.web3templates.com");
@@ -22,7 +22,7 @@ const $$OurServices = createComponent(($$result, $$props, $$slots) => {
   } = Astro2.props;
   console.log(index);
   return renderTemplate`${maybeRenderHead()}<div data-aos="fade-up"${addAttribute(parentStyle, "class")}> <div${addAttribute(imgStyle, "class")}> <img${addAttribute(imgSrc, "src")}${addAttribute(altText, "alt")} class="h-[80px] md:h-[120px] w-[120px] m-2 drop-shadow-primary"> <div class="flex items-center"> <h2 class="block md:hidden text-[15px] font-semibold mb-3 text-primary xs:pr-5 md:pr-0 xxs:pl-0 pl-3"> ${title} </h2> </div> </div> <div${addAttribute(textStyle, "class")}> <h2 class="hidden md:block text-[15px] font-semibold mb-3 text-primary"> ${title} </h2> <p class="text-justify text-[13px] truncate md:hidden"${addAttribute(`short-description${index}`, "id")}> ${desc.split(" ").slice(0, 20).join(" ")} </p> <p class="text-justify text-[13px] hidden md:block"${addAttribute(`full-description${index}`, "id")}> ${desc} </p> <div class="md:hidden flex items-center mt-4"${addAttribute(`toggle-button${index}`, "id")}> <span class="text-teal-400 focus:outline-none"> Read more </span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="keyboard-down-arrow" fill="#01BDB7"><path d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"></path></svg> </div> </div> </div>`;
-}, "/Users/mac/Documents/VeestarProducts/gi-navy/src/screens/habitat-solutions/ourServices.astro", void 0);
+}, "/Users/veestar/veestar/gi-navy/src/screens/habitat-solutions/ourServices.astro", void 0);
 
 const cards = [
   {
@@ -128,9 +128,9 @@ LEARN MORE
 Upgrading Habitability:
 </div> <div class="text-[11px] xxs:text-[13px] font-semibold absolute bottom-2 md:bottom-6 left-2 xxs:left-6 md:left-32 lg:left-6 text-white transition-all duration-300 group-hover:opacity-0">
 A Game-Changing Partnership with <span class="font-serifa">GI</span> </div> </div> </section> ` }));
-}, "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/what-we-do/habitat-solutions.astro", void 0);
+}, "/Users/veestar/veestar/gi-navy/src/pages/what-we-do/habitat-solutions.astro", void 0);
 
-const $$file = "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/what-we-do/habitat-solutions.astro";
+const $$file = "/Users/veestar/veestar/gi-navy/src/pages/what-we-do/habitat-solutions.astro";
 const $$url = "/what-we-do/habitat-solutions";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

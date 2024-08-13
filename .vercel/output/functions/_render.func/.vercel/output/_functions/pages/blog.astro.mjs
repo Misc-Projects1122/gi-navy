@@ -78,9 +78,9 @@ publishedBlogEntries.sort(function (a, b) {
     </main>
   </Container>
 </Layout> -->`;
-}, "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/blog.astro", void 0);
+}, "/Users/veestar/veestar/gi-navy/src/pages/blog.astro", void 0);
 
-const $$file = "/Users/mac/Documents/VeestarProducts/gi-navy/src/pages/blog.astro";
+const $$file = "/Users/veestar/veestar/gi-navy/src/pages/blog.astro";
 const $$url = "/blog";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

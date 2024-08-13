@@ -1,8 +1,10 @@
 # build output
 dist/
-.output/
-.astro
 
+# generated types
+.astro/
+.yarn/
+.vercel/
 # dependencies
 node_modules/
 
@@ -19,4 +21,3 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
-.yarn/
