@@ -1,0 +1,76 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^\\/_image$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/404\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/about\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/api\\/contact\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/blog\\/([^/]+?)\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/blog\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/contact\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/ins-vikrant\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/nistar-class-dsv\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/what-we-do\\/critical-structures\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/what-we-do\\/engineering-solutions\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/what-we-do\\/habitat-solutions\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/who-we-are\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/$",
+			"dest": "_render"
+		},
+		{
+			"src": "/.*",
+			"dest": "_render",
+			"status": 404
+		}
+	]
+}
