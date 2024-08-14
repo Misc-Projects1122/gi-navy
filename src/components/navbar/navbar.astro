@@ -170,7 +170,7 @@ console.log("current path", currentPath);
 </header>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("astro:page-load", function () {
     const navbarToggle = document.getElementById("navbar-toggle");
     const closeNavbar = document.getElementById("close-navbar");
     const navbar = document.getElementById("navbar");
@@ -179,16 +179,16 @@ console.log("current path", currentPath);
       navbar.classList.toggle("translate-x-full");
     }
 
-    function handleClickOutside(event) {
-      if (!navbar.contains(event.target) && !navbarToggle.contains(event.target)) {
-        if (!navbar.classList.contains("translate-x-full")) {
-          navbar.classList.add("translate-x-full");
-        }
-      }
-    }
+    // function handleClickOutside(event) {
+    //   if (!navbar.contains(event.target) && !navbarToggle.contains(event.target)) {
+    //     if (!navbar.classList.contains("translate-x-full")) {
+    //       navbar.classList.add("translate-x-full");
+    //     }
+    //   }
+    // }
 
     navbarToggle.addEventListener("click", toggleDrawer);
     closeNavbar.addEventListener("click", toggleDrawer);
-    document.addEventListener("click", handleClickOutside);
+    // document.addEventListener("click", handleClickOutside);
   });
 </script>
