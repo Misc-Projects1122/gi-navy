@@ -136,7 +136,7 @@ console.log("current path", currentPath);
                 <li>
                   <a href={item.path}
                     class={`flex md:pr-3 border-r-1 items-center text-sm leading-6 border-r-[1px] border-blue-900 hover:text-primary ${currentPath === item.key ? 'text-secondary' : 'text-background'}`}>
-                    <span class="text-xl md:text-sm my-0 md:my-1 mt-6 font-medium  md:mt-1"> {item.title} </span>
+                    <span class={`text-xl md:text-sm my-0 md:my-1 mt-6  md:mt-1 ${currentPath === item.key && 'font-medium'}`}> {item.title} </span>
                   </a>
                 </li>
               )}
