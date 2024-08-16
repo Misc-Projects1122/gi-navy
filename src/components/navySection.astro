@@ -110,32 +110,47 @@
     const listItems = document.querySelectorAll("#naval-list li");
     const icons = document.querySelectorAll(".location-icon");
 
-    listItems.forEach((item) => {
-      item.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevents the event from bubbling up
-
-        listItems.forEach((li) =>
-          li.classList.remove("text-primary", "font-extrabold")
-        );
-        icons.forEach((icon) => {
-          icon.querySelector("path").setAttribute("fill", "white");
-          icon.classList.remove(
-            "transform",
-            "scale-125",
-            "transition-transform",
-            "duration-300"
-          );
-        });
-
-        item.classList.add("text-primary", "font-extrabold");
-        const icon = document.querySelector(`#icon-${item.id}`);
-        icon.querySelector("path").setAttribute("fill", "#01BDB7");
-        icon.classList.add(
+    function handleHighlight(id) {
+      listItems.forEach((li) =>
+        li.classList.remove("text-primary", "font-extrabold")
+      );
+      icons.forEach((icon) => {
+        icon.querySelector("path").setAttribute("fill", "white");
+        icon.classList.remove(
           "transform",
           "scale-125",
           "transition-transform",
-          "duration-300"
+          "duration-300",
+          "highlighted"
         );
+      });
+
+      const item = document.querySelector(`#${id}`);
+      item.classList.add("text-primary", "font-extrabold");
+
+      const icon = document.querySelector(`#icon-${id}`);
+      icon.querySelector("path").setAttribute("fill", "#01BDB7");
+      icon.classList.add(
+        "transform",
+        "scale-125",
+        "transition-transform",
+        "duration-300",
+        "highlighted"
+      );
+    }
+
+    listItems.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevents the event from bubbling up
+        handleHighlight(item.id);
+      });
+    });
+
+    icons.forEach((icon) => {
+      icon.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevents the event from bubbling up
+        const id = icon.id.replace("icon-", "");
+        handleHighlight(id);
       });
     });
   }
@@ -146,3 +161,15 @@
   // Run the script on client-side navigation
   window.addEventListener("astro:page-load", initializeNavalList);
 </script>
+
+<style>
+  .location-icon {
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .location-icon.highlighted {
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6)); /* Glow effect */
+  }
+</style>
