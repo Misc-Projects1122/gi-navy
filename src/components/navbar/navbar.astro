@@ -20,14 +20,20 @@ const menuitems = [
     path: "#",
     key: "what-we-do",
     children: [
-      { title: "Habitat Solutions", path: "/what-we-do/habitat-solutions" },
+      {
+        title: "Habitat Solutions",
+        path: "/what-we-do/habitat-solutions",
+        key: "habitat-solutions",
+      },
       {
         title: "Critical Structures",
         path: "/what-we-do/critical-structures",
+        key: "critical-structures",
       },
       {
         title: "Engineering Solutions",
         path: "/what-we-do/engineering-solutions",
+        key: "engineering-solutions",
       },
     ],
   },
@@ -62,105 +68,141 @@ console.log("current path", currentPath);
       <a href="/" class="text-lg">
         <img src="/assets/logo-black.webp" class="w-16 lg:w-20" />
       </a>
-      <button class="block md:hidden navbar-toggle px-3 " id="navbar-toggle" type="button" onclick="toggleDrawer()">
-        <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <button
+        class="block md:hidden navbar-toggle px-3"
+        id="navbar-toggle"
+        type="button"
+        onclick="toggleDrawer()">
+        <svg
+          fill="currentColor"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
           <title>Toggle Menu</title>
-          <path class="astronav-close-icon astronav-toggle hidden" fill-rule="evenodd" clip-rule="evenodd"
-            d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"></path>
-          <path class="astronav-open-icon astronav-toggle" fill-rule="evenodd"
-            d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path>
+          <path
+            class="astronav-close-icon astronav-toggle hidden"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"
+          ></path>
+          <path
+            class="astronav-open-icon astronav-toggle"
+            fill-rule="evenodd"
+            d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
+          ></path>
         </svg>
       </button>
     </div>
 
-    <div id="navbar"
+    <!-- Mobile view -->
+    <div
+      id="navbar"
       class="md:hidden navbar-mobile fixed top-0 left-0 w-3/4 h-full bg-white transform -translate-x-full transition-transform duration-300 z-20">
-      <button id="close-navbar" type="button" onclick="toggleDrawer()"
-        class="block md:hidden absolute top-4 right-4 text-3xl p-3">&times;</button>
+      <button
+        id="close-navbar"
+        type="button"
+        onclick="toggleDrawer()"
+        class="absolute top-4 right-4 text-3xl p-3">&times;</button
+      >
       <ul class="flex flex-col md:flex-row md:gap-3 pl-10 mt-10">
-        {menuitems.map((item, index) => (
-          <>
-            {item.children && (
-              <div class={`hidden md:block`}>
-                <Dropdown title={item.title} active={currentPath.includes(item.key)} children={item.children}
-                  lastItem={index === menuitems.length - 1} />
-              </div>
-              <div class="block md:hidden mt-6">
-                <DropdownMobile title={item.title} children={item.children} lastItem={index === menuitems.length - 1} />
-              </div>
-            )}
-            {!item.children && (
-              <li>
-                <a href={item.path}
-                  class={`flex md:pr-3  items-center text-sm leading-6  hover:text-primary ${currentPath === item.key ? 'text-secondary' : 'text-background'}`}>
-                  <span class="text-xl md:text-sm my-0 md:my-1 mt-6 font-medium  md:mt-1"> {item.title} </span>
-                </a>
-              </li>
-            )}
-          </>
-        ))}
-        <div class="md:hidden flex items-center gap-4">
-          <a href="/contact" class="flex lg:px-3 items-center text-black hover:text-blue-500">
-            <span class="text-xl mt-2 font-medium"> Contact Us</span>
-          </a>
-        </div>
-        <div class="block md:hidden mt-6">{menuItemsMobile.map((item, index) => (
-          <>
-            <li>
-              <a href={item.path}
-                class="flex lg:px-3 items-center  py-1 text-background font-light text-sm leading-8 hover:text-blue-500">
-                <span class=""> {item.title}</span>
-              </a>
-            </li>
-          </>
-        ))}</div>
-      </ul>
-    </div>
-
-    <div class="flex items-center">
-      <MenuItems
-        class="hidden md:flex w-full md:w-auto mt-5  md:mt-0 text-sm border-t-4 border-primary md:border-t-0 h-svh md:h-auto md:mr-3">
-        <ul class="flex flex-col md:flex-row md:gap-3 pl-10">
-          {menuitems.map((item, index) => (
+        <!-- mobile drop down items  -->
+        {
+          menuitems.map((item, index) => (
             <>
               {item.children && (
-                <div class={`hidden md:block`}>
-                  <Dropdown title={item.title} active={currentPath.includes(item.key)} children={item.children}
-                    lastItem={index === menuitems.length - 1} />
-                </div>
-                <div class="block md:hidden mt-6">
-                  <DropdownMobile title={item.title} children={item.children} lastItem={index === menuitems.length - 1} active={currentPath.includes(item.key)} />
+                <div class="mt-6">
+                  <DropdownMobile
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
                 </div>
               )}
+              {/* mobile home and who we are  */}
               {!item.children && (
                 <li>
-                  <a href={item.path}
-                    class={`flex md:pr-3 border-r-1 items-center text-sm leading-6 border-r-[1px] border-blue-900 hover:text-primary ${currentPath === item.key ? 'text-secondary' : 'text-background'}`}>
-                    <span class={`text-xl md:text-sm my-0 md:my-1 mt-6  md:mt-1 ${currentPath === item.key && 'font-medium'}`}> {item.title} </span>
+                  <a
+                    href={item.path}
+                    class={`flex md:pr-3  items-center text-sm leading-6  hover:text-primary ${currentPath === item.key ? "text-secondary" : "text-background"}`}>
+                    <span class="text-xl md:text-sm my-0 md:my-1 mt-6 font-medium  md:mt-1">
+                      {item.title}
+                    </span>
                   </a>
                 </li>
               )}
             </>
-          ))}
-          <div class="md:hidden flex items-center gap-4">
-            <a href="/contact" class="flex lg:px-3 items-center text-black hover:text-blue-500">
-              <span class="text-xl mt-2 font-medium"> Contact Us</span>
-            </a>
-          </div>
-          <div class="block md:hidden mt-6">{menuItemsMobile.map((item, index) => (
-            <>
-              <li>
-                <a href={item.path}
-                  class="flex lg:px-3 items-center  py-1 text-background font-light text-sm leading-8 hover:text-blue-500">
-                  <span class=""> {item.title}</span>
-                </a>
-              </li>
-            </>
-          ))}</div>
+          ))
+        }
+        <!-- contact us -->
+        <div class="md:hidden flex items-center gap-4">
+          <a
+            href="/contact"
+            class="flex lg:px-3 items-center text-black hover:text-blue-500">
+            <span
+              class={`text-xl mt-2 font-medium ${currentPath.includes("contact") ? "text-secondary" : "text-background"}`}>
+              Contact Us</span
+            >
+          </a>
+        </div>
+
+        <!-- careers and other -->
+        <div class="block md:hidden mt-6">
+          {
+            menuItemsMobile.map((item, index) => (
+              <>
+                <li>
+                  <a
+                    href={item.path}
+                    class="flex lg:px-3 items-center  py-1 text-background font-light text-sm leading-8 hover:text-blue-500">
+                    <span class=""> {item.title}</span>
+                  </a>
+                </li>
+              </>
+            ))
+          }
+        </div>
+      </ul>
+    </div>
+
+    <!-- Desktop view -->
+    <div class="flex items-center">
+      <MenuItems
+        class="hidden md:flex w-full md:w-auto mt-5 md:mt-0 text-sm border-t-4 border-primary md:border-t-0 h-svh md:h-auto md:mr-3">
+        <ul class="flex flex-col md:flex-row md:gap-3 pl-10">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <div>
+                    <Dropdown
+                      title={item.title}
+                      active={currentPath.includes(item.key)}
+                      children={item.children}
+                      lastItem={index === menuitems.length - 1}
+                    />
+                  </div>
+                )}
+                {!item.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class={`flex md:pr-3 border-r-1 items-center text-sm leading-6 border-r-[1px] border-blue-900 hover:text-primary ${currentPath === item.key ? "text-secondary" : "text-background"}`}>
+                      <span
+                        class={`text-xl md:text-sm my-0 md:my-1 mt-6  md:mt-1 ${currentPath === item.key && "font-medium"}`}>
+                        {item.title}
+                      </span>
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
         </ul>
       </MenuItems>
       <div class="hidden md:flex items-center gap-4">
-        <a href="/contact"
+        <a
+          href="/contact"
           class="text-white text-md md:text-base font-medium px-3 md:px-8 py-1 md:py-[8px] border-2 border-secondary bg-secondary inline-block transition duration-300 ease-in-out hover:bg-primary hover:border-primary cursor-pointer font-condensed">
           CONTACT US
         </a>

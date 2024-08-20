@@ -1,6 +1,9 @@
 ---
 import { Dropdown as DropdownContainer, DropdownItems } from "astro-navbar";
 const { title, lastItem, children, active } = Astro.props;
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <li class="relative">
@@ -18,7 +21,7 @@ const { title, lastItem, children, active } = Astro.props;
         children.map((item) => (
           <a
             href={item.path}
-            class={`text-background leading-5  text-base py-2 px-4 ${active && "text-secondary font-medium"} `}>
+            class={`text-background leading-5  text-base py-2 px-4 ${currentPath.includes(item.key) && "text-secondary font-medium"} `}>
             {item.title}
           </a>
         ))
