@@ -129,7 +129,7 @@ console.log("current path", currentPath);
                     lastItem={index === menuitems.length - 1} />
                 </div>
                 <div class="block md:hidden mt-6">
-                  <DropdownMobile title={item.title} children={item.children} lastItem={index === menuitems.length - 1} />
+                  <DropdownMobile title={item.title} children={item.children} lastItem={index === menuitems.length - 1} active={currentPath.includes(item.key)} />
                 </div>
               )}
               {!item.children && (
