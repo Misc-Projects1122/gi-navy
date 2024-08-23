@@ -22,6 +22,7 @@ const Loader = () => (
 
 export default function SubscribeForm() {
   const [responseMessage, setResponseMessage] = useState("");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [values, setValues] = useState({
     email: "",
     name: "",
@@ -32,31 +33,50 @@ export default function SubscribeForm() {
 
   useEffect(() => {
     if (responseMessage) {
-      setTimeout(() => {
-        setResponseMessage("");
-      }, 5000);
+      setIsPopupOpen(true);
     }
   }, [responseMessage]);
+
+  const closeModal = () => {
+    setIsPopupOpen(false);
+    setResponseMessage("");
+  };
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!values.email || !values.name || !values.message || !values.subject) {
-      return null;
+      setResponseMessage("Please fill in all the fields before submitting.");
+      setIsPopupOpen(true);
+      return;
     }
+
     setLoading(true);
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
-    const data = await response.json();
-    setLoading(false);
-    if (data.message) {
-      setResponseMessage(data.message);
-      setValues({ email: "", name: "", message: "", subject: "" });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const data = await response.json();
+      setLoading(false);
+      if (data.message) {
+        setResponseMessage(
+          "Thank you for your response, our team will contact you soon!!!"
+        );
+        setValues({ email: "", name: "", message: "", subject: "" });
+      }
+    } catch (err) {
+      setLoading(false);
+      setResponseMessage("Something went wrong. Please try again later.");
+      setIsPopupOpen(true);
     }
   }
 
@@ -65,77 +85,116 @@ export default function SubscribeForm() {
   };
 
   return (
-    <form onSubmit={submit} noValidate className=" w-full">
-      <div className="flex flex-col gap-4 w-full">
-        <div>
-          <span>Name</span>
+    <>
+      <form onSubmit={submit} noValidate className=" w-full">
+        <div className="flex flex-col gap-4 w-full">
+          <div>
+            <span>Name</span>
 
-          <input
-            type="text"
-            name="name"
-            id="name"
-            className="w-full mt-2 px-4 py-3 border-[1px]  rounded-md outline-none focus:ring-4 border-black focus:border-gray-600 ring-gray-100"
-            required
-            onChange={(event) => onChange(event, "name")}
-            value={values.name}
-            autoComplete="name"
-          />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="w-full mt-2 px-4 py-3 border-[1px]  rounded-md outline-none focus:ring-4 border-black focus:border-gray-600 ring-gray-100"
+              required
+              onChange={(event) => onChange(event, "name")}
+              value={values.name}
+              autoComplete="name"
+            />
+          </div>
+          <div>
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="w-full mt-2 px-4 py-3 border-[1px]  rounded-md outline-none focus:ring-4 border-black focus:border-gray-600 ring-gray-100"
+              required
+              value={values.email}
+              onChange={(event) => onChange(event, "email")}
+              autoComplete="email"
+            />
+          </div>
+          <div>
+            <span>Subject</span>
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              className="w-full mt-2 px-4 py-3 border-[1px]  rounded-md outline-none focus:ring-4 border-black focus:border-gray-600 ring-gray-100"
+              required
+              onChange={(event) => onChange(event, "subject")}
+              value={values.subject}
+              autoComplete="subject"
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <span>Message</span>
+            <textarea
+              name="message"
+              id="message"
+              // rows="4"
+              className="w-full mt-2 px-4 py-3 border-[1px]  rounded-md outline-none h-44 focus:ring-4 border-black focus:border-gray-600 ring-gray-100"
+              onChange={(event) => onChange(event, "message")}
+              value={values.message}
+              autoComplete="message"
+              required></textarea>
+          </div>
         </div>
-        <div>
-          <span>Email</span>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            className="w-full mt-2 px-4 py-3 border-[1px]  rounded-md outline-none focus:ring-4 border-black focus:border-gray-600 ring-gray-100"
-            required
-            value={values.email}
-            onChange={(event) => onChange(event, "email")}
-            autoComplete="email"
-          />
-        </div>
-        <div>
-          <span>Subject</span>
-          <input
-            type="text"
-            name="subject"
-            id="subject"
-            className="w-full mt-2 px-4 py-3 border-[1px]  rounded-md outline-none focus:ring-4 border-black focus:border-gray-600 ring-gray-100"
-            required
-            onChange={(event) => onChange(event, "subject")}
-            value={values.subject}
-            autoComplete="subject"
-          />
-        </div>
-        <div className="sm:col-span-2">
-          <span>Message</span>
-          <textarea
-            name="message"
-            id="message"
-            // rows="4"
-            className="w-full mt-2 px-4 py-3 border-[1px]  rounded-md outline-none h-44 focus:ring-4 border-black focus:border-gray-600 ring-gray-100"
-            onChange={(event) => onChange(event, "message")}
-            value={values.message}
-            autoComplete="message"
-            required></textarea>
-        </div>
-      </div>
 
-      {isLoading ? (
-        <div className="mt-4">
-          <Loader />
-        </div>
-      ) : (
-        <div className="flex justify-end">
-          <button className="text-white text-base md:text-base font-semibold px-8 py-[8px] border-[1px] border-secondary bg-secondary inline-block transition duration-300 ease-in-out hover:bg-primary hover:border-primary cursor-pointer font-condensed">
-            SEND MESSAGE
-          </button>
+        {isLoading ? (
+          <div className="mt-4">
+            <Loader />
+          </div>
+        ) : (
+          <div className="flex justify-end">
+            <button className="text-white text-base md:text-base font-semibold px-8 py-[8px] border-[1px] border-secondary bg-secondary inline-block transition duration-300 ease-in-out hover:bg-primary hover:border-primary cursor-pointer font-condensed">
+              SEND MESSAGE
+            </button>
+          </div>
+        )}
+
+        {/* {responseMessage && (
+          <p className="flex justify-end text-black mt-4">{responseMessage}</p>
+        )} */}
+      </form>
+      {isPopupOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4 sm:p-6 lg:p-8">
+          <div
+            className={`bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg border-4 ${
+              responseMessage ===
+              "Thank you for your response, our team will contact you soon!!!"
+                ? "border-blue-400"
+                : "border-red-400"
+            } transform transition-transform duration-300 ease-out scale-110 max-w-full sm:max-w-lg lg:max-w-xl mx-auto`}>
+            <h2
+              className={`text-xl sm:text-2xl lg:text-3xl font-bold mb-4 text-center ${
+                responseMessage ===
+                "Thank you for your response, our team will contact you soon!!!"
+                  ? "text-blue-400"
+                  : "text-red-400"
+              } `}>
+              {responseMessage ===
+              "Thank you for your response, our team will contact you soon!!!"
+                ? "Thank You"
+                : "Oops!"}
+            </h2>
+            <p className="text-center text-sm sm:text-lg lg:text-xl">
+              {responseMessage}
+            </p>
+            <button
+              onClick={closeModal}
+              className={`mt-4 sm:mt-6 ${
+                responseMessage ===
+                "Thank you for your response, our team will contact you soon!!!"
+                  ? "bg-blue-400"
+                  : "bg-red-400"
+              }  text-white px-3 sm:px-4 py-2 rounded  transition-all duration-200 ease-in-out w-full text-sm sm:text-lg font-semibold`}>
+              Close
+            </button>
+          </div>
         </div>
       )}
-
-      {responseMessage && (
-        <p className="flex justify-end text-black mt-4">{responseMessage}</p>
-      )}
-    </form>
+    </>
   );
 }
