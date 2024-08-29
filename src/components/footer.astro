@@ -1,5 +1,10 @@
 ---
-
+const footerData = [
+  { title: "Cookies Policy" },
+  { title: "Privacy Policy" },
+  { title: "Terms of Service", link: "/terms-of-service" },
+  { title: "Sitemap", link: "/sitemap" },
+];
 ---
 
 <footer class="hidden md:block bg-gray-900 text-backgroundSec pt-12 pb-8">
@@ -38,15 +43,15 @@
       <div class="col-span-2">
         <h3 class="text-lg mb-4">Legal</h3>
         <ul>
-          <li class="mb-2">
-            <a class="hover:underline text-base">Cookies Policy</a>
-          </li>
-          <li class="mb-2">
-            <a class="hover:underline text-base">Privacy Policy</a>
-          </li>
-          <li class="mb-2">
-            <a class="hover:underline text-base">Terms of Service</a>
-          </li>
+          {
+            footerData.map((item) => (
+              <li class="mb-2">
+                <a href={item.link} class="hover:underline text-base">
+                  {item.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
       <!-- Icons Section -->
@@ -120,10 +125,19 @@
 
       <!-- Legal Section -->
       <div
-        class="flex flex-row xs:gap-10 gap-3.5 justify-center text-center border-t-2 border-background pt-6">
-        <a class="hover:underline text-xs">Cookies Policy</a>
+        class="flex flex-row xs:gap-5 gap-3 justify-center text-center border-t-2 border-background pt-6">
+        {
+          footerData.map((item) => (
+            <a href={item.link} class="hover:underline text-xs">
+              {item.title}
+            </a>
+          ))
+        }
+        <!-- <a class="hover:underline text-xs">Cookies Policy</a>
         <a class="hover:underline text-xs">Privacy Policy</a>
-        <a class="hover:underline text-xs">Terms of Service</a>
+        <a href="/terms-of-service" class="hover:underline text-xs"
+          >Terms of Service</a
+        > -->
       </div>
     </div>
   </div>
