@@ -1,0 +1,9 @@
+/* navbar.css */
+
+.navbar-mobile {
+  transform: translateX(-10%);
+}
+
+.navbar-mobile.translate-x-full {
+  transform: translateX(0);
+}

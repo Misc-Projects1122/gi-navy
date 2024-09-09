@@ -1,44 +1,66 @@
 ---
-import Contactform from "@components/contactform.astro";
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
+// import Contactform from "@components/contactform.astro";
+import Contactform from "@components/ContactForm.tsx";
 import Layout from "@layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+  { title: "Home", path: "/" },
+  { title: "Contact Us", isActive: true },
+];
 ---
 
-<Layout title="Contact">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are a here to help.</Fragment>
-    </Sectionhead>
+<div class="flex flex-col min-h-screen">
+  <Layout title="Contact Us">
+    <Breadcrumbs items={breadcrumbItems} />
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-      <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
+    <div
+      class="md:grid md:grid-cols-2 md:gap-10 md:px-10 lg:px-40 xl:px-60 flex flex-col-reverse mt-[32px] md:mt-[90px] mb-[32px] md:mb-[126px]">
+      <div class="xs:m-5 m-3 md:m-0 flex flex-col">
+        <div
+          class="text-3xl text-dark font-semibold font-condensed hidden md:block mb-[32px]">
+          Get in touch
+        </div>
+        <p
+          class="text-sm md:text-base leading-relaxed text-dark text-justify font-light mb-[32px] px-4 md:px-0">
+          Thank you for your interest in <span class="font-serifa font-bold"
+            >GI</span
+          >. As a leading defence contractor for Navy Ships, we are committed to
+          providing our clients with the highest quality services. Whether you
+          need habitability solutions, structural repairs and upgrades or
+          defence contracting services, we are here to help. Please contact us
+          using the information provided below or fill out the contact form and
+          a member of our team will get back to you as soon as possible. We look
+          forward to hearing from you.
         </p>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
-            >
-          </div>
+        <div class="flex justify-center md:justify-start gap-5">
+          <a href="#" class="hover:underline"
+            ><img
+              src="/assets/linkedin.svg"
+              alt="LinkedIn"
+              class="h-8 bg-white"
+            /></a
+          >
+          <a href="#" class="hover:underline"
+            ><img
+              src="/assets/whatsapp.svg"
+              alt="WhatsApp"
+              class="h-8 bg-white"
+            /></a
+          >
+          <a href="#" class="hover:underline"
+            ><img src="/assets/x.svg" alt="Other" class="h-8 bg-white" /></a
+          >
         </div>
       </div>
-      <div>
-        <Contactform />
+      <div class="mx-7">
+        <div
+          class="md:hidden text-[16px] text-dark font-semibold text-center mb-6">
+          Get in touch
+        </div>
+        <!-- <Contactform />  -->
+        <Contactform client:load />
       </div>
     </div>
-  </Container>
-</Layout>
+  </Layout>
+</div>

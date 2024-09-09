@@ -1,0 +1,31 @@
+---
+import { Dropdown as DropdownContainer, DropdownItems } from "astro-navbar";
+const { title, lastItem, children, active } = Astro.props;
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<li class="relative">
+  <span class="text-xl text-center flex align-middle items-center font-medium"
+    >{title}</span
+  >
+  <div
+    class:list={[
+      "lg:absolute w-full lg:w-48 z-10",
+      lastItem ? "lg:right-0 origin-top-right" : "lg:left-0 origin-top-left",
+    ]}>
+    <div
+      class="p-2 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col">
+      {
+        children.map((item) => (
+          <a
+            href={item.path}
+            class={`text-background leading-5  text-base py-2 px-4 ${currentPath.includes(item.key) && "text-secondary font-medium"} `}>
+            {item.title}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</li>

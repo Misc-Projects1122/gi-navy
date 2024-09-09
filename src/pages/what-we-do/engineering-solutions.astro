@@ -1,5 +1,57 @@
 ---
+import Layout from "@layouts/Layout.astro";
+import SolutionItem from "screens/what-we-do/engineering-solutions/engineerItem.astro";
+import { enginnerItemCards } from "../../screens/what-we-do/cards";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
 
+const breadcrumbItems = [
+  { title: "Home", path: "/" },
+  { title: "What we do", path: "/" },
+  { title: "Engineering solutions", isActive: true },
+];
 ---
 
-<div>Engineering Solutions</div>
+<Layout title="Engineering solutions">
+  <div class="text-gray-900">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <!-- Engineering solutions -->
+    <section
+      id="leading"
+      class="max-w-2xl mx-auto space-y-6 md:space-y-8 mb-[32px] md:mb-[16px] mt-[32px] md:mt-[64px] px-[37px] md:px-0">
+      <div
+        class="text-[13px] xxs:text-[16px] md:text-[36px] font-semibold md:font-medium text-justify flex justify-center md:mb-[24px]">
+        <div data-aos="fade-up" class="">Engineering Solutions</div>
+      </div>
+
+      <p
+        data-aos="fade-up"
+        class="text-justify text-[13px] xxs:text-sm md:text-base font-light">
+        We offer comprehensive engineering and technological solutions across a
+        range of specialties, including naval construction, safety engineering,
+        thermal insulation, fabrication, and testing. This versatility enables
+        us to execute critical projects on various Indian Navy ships and
+        commercial vessels.
+      </p>
+
+      <p
+        data-aos="fade-up"
+        class="text-justify text-sm md:text-base font-light">
+        In recent years, we have provided extensive services to several naval
+        ships, addressing a variety of engineering challenges.
+      </p>
+    </section>
+
+    <!-- Ships -->
+    <div class="block md:hidden container mx-auto">
+      <div class="grid grid-cols-1 py-8 md:py-16 md:grid-cols-3">
+        {enginnerItemCards.map((card) => <SolutionItem {...card} />)}
+      </div>
+    </div>
+    <div class="hidden md:block">
+      <div class="grid grid-cols-1 py-12 md:grid-cols-3">
+        {enginnerItemCards.map((card) => <SolutionItem {...card} />)}
+      </div>
+    </div>
+  </div>
+</Layout>

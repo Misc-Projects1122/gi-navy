@@ -1,0 +1,45 @@
+---
+// NavySection.astro
+import NavyCard from "./navyCard.astro";
+
+const cards = [
+  {
+    image: "/boat1.webp",
+    title: "Habitability for INS Vikrant",
+    description:
+      "habitat expertise enabled the Indian Navy to ensure the best accommodation in the flagship aircraft carrier INS Vikrant, thus enhancing their operational capabilities by ensuring utmost safety and comfort for the crew.",
+    link: "/ins-vikrant",
+  },
+  {
+    image: "/boat2.webp",
+    title: "Critical structures for Naval Support Vessels",
+    description:
+      "helideck expertise enabled Hindustan Shipyard to equip cutting-edge Nistar class Diving Support Vessels with lightweight decks, enhancing Indian Navy flight operations across diverse environments.",
+    link: "/nistar-class-dsv",
+  },
+  {
+    image: "/boat3.webp",
+    title: "Engineering Solutions",
+    description:
+      "proficiency in naval design and engineering has empowered us to successfully execute numerous complex projects across various sectors for the Indian Navy.",
+    link: "/what-we-do/engineering-solutions",
+  },
+];
+---
+
+<section class="">
+  <div class="w-full text-center">
+    <h2
+      data-aos="fade-up"
+      class="hidden lg:block text-xl md:text-3xl text-gray-800 my-10 md:mt-[72px] md:mb-[48px]">
+      Finding <span class="text-secondary"> elegant solutions</span> to complex challenges
+    </h2>
+    <h2
+      class="block lg:hidden text-xl md:text-3xl text-gray-800 my-8 md:mt-[72px] md:mb-[48px]">
+      <span class="text-secondary">Elegant solutions</span> to complex challenges
+    </h2>
+    <div class="lg:flex w-[100vw] mb-8 md:mb-0">
+      {cards.map((card) => <NavyCard {...card} />)}
+    </div>
+  </div>
+</section>

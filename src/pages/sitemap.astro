@@ -1,0 +1,71 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const pageList = [
+  {
+    title: "Home",
+    path: "/",
+    key: "",
+  },
+  {
+    title: "Who we are",
+    path: "/who-we-are",
+    key: "who-we-are",
+  },
+  {
+    title: "What we do",
+    path: "#",
+    key: "what-we-do",
+    children: [
+      {
+        title: "Habitat Solutions",
+        path: "/what-we-do/habitat-solutions",
+        key: "habitat-solutions",
+      },
+      {
+        title: "Critical Structures",
+        path: "/what-we-do/critical-structures",
+        key: "critical-structures",
+      },
+      {
+        title: "Engineering Solutions",
+        path: "/what-we-do/engineering-solutions",
+        key: "engineering-solutions",
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Sitemap">
+  <section class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Sitemap</h1>
+
+    <div class="mb-8">
+      <ul class="grid grid-cols-1 gap-6">
+        {
+          pageList.map((page) => (
+            <a href={page.path} class="flex items-center">
+              <svg
+                class="h-5 w-5 text-blue-500"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <circle cx="12" cy="12" r="9" /> <path d="M9 12l2 2l4 -4" />
+              </svg>
+              <div class="text-blue-600 underline hover:text-blue-800 ml-1">
+                {page.title}
+              </div>
+            </a>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>

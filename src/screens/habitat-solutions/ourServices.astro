@@ -1,0 +1,59 @@
+---
+const {
+  imgSrc,
+  altText,
+  title,
+  desc,
+  parentStyle,
+  textStyle,
+  imgStyle,
+  index,
+} = Astro.props;
+console.log(index);
+---
+
+<div data-aos="fade-up" class={parentStyle}>
+  <div class={imgStyle}>
+    <img
+      src={imgSrc}
+      alt={altText}
+      class="h-[80px] md:h-[120px] w-[120px] m-2 drop-shadow-primary"
+    />
+    <div class="flex items-center">
+      <h2
+        class="block md:hidden text-[15px] font-semibold mb-3 text-primary xs:pr-5 md:pr-0 xxs:pl-0 pl-3">
+        {title}
+      </h2>
+    </div>
+  </div>
+
+  <div class={textStyle}>
+    <h2 class="hidden md:block text-[15px] font-semibold mb-3 text-primary">
+      {title}
+    </h2>
+    <p
+      class="text-justify text-[13px] truncate md:hidden"
+      id={`short-description${index}`}>
+      {desc.split(" ").slice(0, 20).join(" ")}
+    </p>
+    <p
+      class="text-justify text-[13px] hidden md:block"
+      id={`full-description${index}`}>
+      {desc}
+    </p>
+    <div class="md:hidden flex items-center mt-4" id={`toggle-button${index}`}>
+      <span class="text-teal-400 focus:outline-none"> Read more </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        id="keyboard-down-arrow"
+        fill="#01BDB7"
+        ><path
+          d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"
+        ></path></svg
+      >
+    </div>
+  </div>
+</div>
