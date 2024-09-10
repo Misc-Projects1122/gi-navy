@@ -7,7 +7,7 @@ import "../styles/global.css";
 import "aos/dist/aos.css";
 
 export interface Props {
-  title: string;
+  title?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -18,8 +18,12 @@ const resolvedImageWithDomain = new URL(
 ).toString();
 
 const { title } = Astro.props;
+let makeTitle ;
+if(title)
+makeTitle = "I-Forces - "+title ;
+else
+makeTitle = "I-Forces " ;
 
-const makeTitle = title || "I-Forces";
 ---
 
 <!doctype html>
