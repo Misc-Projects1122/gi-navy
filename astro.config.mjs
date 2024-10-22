@@ -9,6 +9,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   output: "server",
   adapter: vercel(),
-  site: "https://g1-navy.vercel.app",
+  site: "https://www.i-forces.tech/",
   integrations: [tailwind(), mdx(), sitemap(), react()],
 });
