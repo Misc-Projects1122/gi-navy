@@ -54,7 +54,7 @@
         />
         <svg
           id="icon-eastern-command"
-          class="location-icon h-9 w-9 absolute bottom-[105px] right-[85px] xxs:bottom-[128px] xxs:right-[108px] xs:bottom-[148px] xs:right-[132px] md:bottom-[300px] md:right-[280px] lg:bottom-[170px] lg:right-[220px] xl:bottom-[185px] xl:right-60"
+          class="location-icon h-9 w-9 absolute bottom-[105px] right-[85px] xxs:bottom-[128px] xxs:right-[108px] xs:bottom-[148px] xs:right-[132px] md:bottom-[300px] md:right-[280px] lg:bottom-[170px] lg:right-[220px] xl:bottom-[185px] xl:right-60 hover:cursor-pointer"
           width="25"
           height="36"
           viewBox="0 0 25 36"
@@ -66,7 +66,7 @@
         </svg>
         <svg
           id="icon-western-command"
-          class="location-icon h-9 w-9 absolute bottom-[100px] left-[25px] xxs:bottom-[135px] xxs:left-[32px] xs:bottom-[160px] xs:left-[37px] md:bottom-[352px] md:left-[92px] lg:bottom-[182px] lg:left-[111px] xl:bottom-[192px] xl:left-[123px]"
+          class="location-icon h-9 w-9 absolute bottom-[100px] left-[25px] xxs:bottom-[135px] xxs:left-[32px] xs:bottom-[160px] xs:left-[37px] md:bottom-[352px] md:left-[92px] lg:bottom-[182px] lg:left-[111px] xl:bottom-[192px] xl:left-[123px] hover:cursor-pointer"
           width="25"
           height="36"
           viewBox="0 0 25 36"
@@ -78,7 +78,7 @@
         </svg>
         <svg
           id="icon-southern-command"
-          class="location-icon h-9 w-9 absolute bottom-[25px] left-[52px] xxs:bottom-[40px] xxs:left-[65px] xs:bottom-[45px] xs:left-[82px] md:bottom-[70px] md:left-[184px] lg:bottom-[47px] lg:left-[162px] xl:bottom-[47px] xl:left-[178px]"
+          class="location-icon h-9 w-9 absolute bottom-[25px] left-[52px] xxs:bottom-[40px] xxs:left-[65px] xs:bottom-[45px] xs:left-[82px] md:bottom-[70px] md:left-[184px] lg:bottom-[47px] lg:left-[162px] xl:bottom-[47px] xl:left-[178px] hover:cursor-pointer"
           width="25"
           height="36"
           viewBox="0 0 25 36"
@@ -90,7 +90,7 @@
         </svg>
         <svg
           id="icon-tri-services-command"
-          class="location-icon h-10 w-10 absolute bottom-[45px] right-[20px] xxs:bottom-[55px] xxs:right-[30px] xs:bottom-[65px] xs:right-[39px] md:bottom-[145px] md:right-[85px] lg:bottom-[85px] lg:right-[112px]"
+          class="location-icon h-9 w-9 absolute bottom-[45px] right-[20px] xxs:bottom-[55px] xxs:right-[30px] xs:bottom-[65px] xs:right-[39px] md:bottom-[145px] md:right-[85px] lg:bottom-[85px] lg:right-[112px] hover:cursor-pointer"
           width="25"
           height="36"
           viewBox="0 0 25 36"
@@ -106,27 +106,70 @@
 </div>
 
 <script is:inline>
-  window.addEventListener("load", () => {
+  function initializeNavalList() {
     const listItems = document.querySelectorAll("#naval-list li");
     const icons = document.querySelectorAll(".location-icon");
+
+    function handleHighlight(id) {
+      listItems.forEach((li) =>
+        li.classList.remove("text-primary", "font-extrabold")
+      );
+      icons.forEach((icon) => {
+        icon.querySelector("path").setAttribute("fill", "white");
+        icon.classList.remove(
+          "transform",
+          "scale-125",
+          "transition-transform",
+          "duration-300",
+          "highlighted"
+        );
+      });
+
+      const item = document.querySelector(`#${id}`);
+      item.classList.add("text-primary", "font-extrabold");
+
+      const icon = document.querySelector(`#icon-${id}`);
+      icon.querySelector("path").setAttribute("fill", "#01BDB7");
+      icon.classList.add(
+        "transform",
+        "scale-125",
+        "transition-transform",
+        "duration-300",
+        "highlighted"
+      );
+    }
 
     listItems.forEach((item) => {
       item.addEventListener("click", (event) => {
         event.stopPropagation(); // Prevents the event from bubbling up
-
-        listItems.forEach((li) =>
-          li.classList.remove("text-primary", "font-extrabold")
-        );
-        icons.forEach((icon) => {
-          icon.querySelector("path").setAttribute("fill", "white");
-          icon.classList.remove("transform", "scale-125", "transition-transform", "duration-300");
-        });
-
-        item.classList.add("text-primary", "font-extrabold");
-        const icon = document.querySelector(`#icon-${item.id}`);
-        icon.querySelector("path").setAttribute("fill", "#01BDB7");
-        icon.classList.add("transform", "scale-125", "transition-transform", "duration-300");
+        handleHighlight(item.id);
       });
     });
-  });
+
+    icons.forEach((icon) => {
+      icon.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevents the event from bubbling up
+        const id = icon.id.replace("icon-", "");
+        handleHighlight(id);
+      });
+    });
+  }
+
+  // Run the script on initial page load
+  document.addEventListener("astro:page-load", initializeNavalList);
+
+  // Run the script on client-side navigation
+  window.addEventListener("astro:page-load", initializeNavalList);
 </script>
+
+<style>
+  .location-icon {
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .location-icon.highlighted {
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6)); /* Glow effect */
+  }
+</style>

@@ -1,5 +1,10 @@
 ---
-
+const footerData = [
+  // { title: "Cookies Policy" },
+  { title: "Privacy Policy", link: "/privacy-policy" },
+  // { title: "Terms of Service" },
+  // { title: "Sitemap" },
+];
 ---
 
 <footer class="hidden md:block bg-gray-900 text-backgroundSec pt-12 pb-8">
@@ -14,20 +19,20 @@
           Mumbai – 400078
         </p>
         <p class="mt-6 text-sm">Contact : +91 9495469520 / +91 7356301924</p>
-        <p class="mt-1 text-sm">Mail : business@g-1.tech.com</p>
+        <p class="mt-1 text-sm">Mail : business@g-1.tech</p>
       </div>
       <!-- Company Section -->
       <div class="col-span-2">
         <h3 class="text-lg mb-4">Company</h3>
         <ul>
           <li class="mb-2">
-            <a href="/about" class="hover:underline text-base">About Us</a>
+            <a href="/who-we-are" class="hover:underline text-base">About Us</a>
           </li>
           <li class="mb-2">
-            <a href="/careers" class="hover:underline text-base">Careers</a>
+            <div class="hover:underline text-base">Careers</div>
           </li>
           <li class="mb-2">
-            <a href="/resources" class="hover:underline text-base">Resources</a>
+            <a class="hover:underline text-base">Resources</a>
           </li>
           <li class="mb-2">
             <a href="/contact" class="hover:underline text-base">Contact Us</a>
@@ -38,36 +43,30 @@
       <div class="col-span-2">
         <h3 class="text-lg mb-4">Legal</h3>
         <ul>
-          <li class="mb-2">
-            <a href="/cookies-policy" class="hover:underline text-base"
-              >Cookies Policy</a
-            >
-          </li>
-          <li class="mb-2">
-            <a href="/privacy-policy" class="hover:underline text-base"
-              >Privacy Policy</a
-            >
-          </li>
-          <li class="mb-2">
-            <a href="/terms-of-service" class="hover:underline text-base"
-              >Terms of Service</a
-            >
-          </li>
+          {
+            footerData.map((item) => (
+              <li class="mb-2">
+                <a href={item.link} class="hover:underline text-base">
+                  {item.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
       <!-- Icons Section -->
       <div class="flex items-center flex-col col-span-2">
-        <div class="flex items-center">
+        <a class="flex items-center" href="/">
           <img src="/assets/logo-white.webp" alt="Logo" class="h-14" />
-        </div>
+        </a>
         <div class="flex items-center space-x-4 pt-8">
-          <a href="#" class="hover:underline"
+          <a class="hover:underline"
             ><img src="/assets/linkedin.svg" alt="LinkedIn" class="h-6" /></a
           >
-          <a href="#" class="hover:underline"
+          <a class="hover:underline"
             ><img src="/assets/whatsapp.svg" alt="WhatsApp" class="h-6" /></a
           >
-          <a href="#" class="hover:underline"
+          <a class="hover:underline"
             ><img src="/assets/x.svg" alt="Other" class="h-6" /></a
           >
         </div>
@@ -83,13 +82,13 @@
       <h3 class="text-lg text-primary mb-3">Company</h3>
       <ul>
         <li class="mb-2 text-base">
-          <a href="/about" class="hover:underline">About Us</a>
+          <a href="/who-we-are" class="hover:underline">About Us</a>
         </li>
         <li class="mb-2 text-base">
-          <a href="/careers" class="hover:underline">Careers</a>
+          <div class="hover:underline">Careers</div>
         </li>
         <li class="mb-2 text-base">
-          <a href="/resources" class="hover:underline">Resources</a>
+          <a class="hover:underline">Resources</a>
         </li>
         <li class="mb-2 text-base">
           <a href="/contact" class="hover:underline">Contact Us</a>
@@ -106,37 +105,40 @@
       </p>
       <p class="mt-7 text-sm">Contact : +91 9495469520</p>
       <p class="ml-[68px] mt-2 text-sm">+91 7356301924</p>
-      <p class="mt-2 text-sm">Mail : business@g-1.tech.com</p>
+      <p class="mt-2 text-sm">Mail : business@g-1</p>
     </div>
 
     <!-- Icons Section -->
     <div class="flex pt-8 py-4 flex-col mb-3">
       <h3 class="text-lg text-primary mb-2">Follow Us</h3>
       <div class="flex gap-8">
-        <a href="#" class="hover:underline"
-          ><img src="/assets/linkedin.svg" alt="LinkedIn" class="h-6" /></a
-        >
-        <a href="#" class="hover:underline"
-          ><img src="/assets/whatsapp.svg" alt="WhatsApp" class="h-6" /></a
-        >
-        <a href="#" class="hover:underline"
-          ><img src="/assets/x.svg" alt="Other" class="h-6" /></a
-        >
+        <div class="hover:underline">
+          <img src="/assets/linkedin.svg" alt="LinkedIn" class="h-6" />
+        </div>
+        <div class="hover:underline">
+          <img src="/assets/whatsapp.svg" alt="WhatsApp" class="h-6" />
+        </div>
+        <div class="hover:underline">
+          <img src="/assets/x.svg" alt="Other" class="h-6" />
+        </div>
       </div>
-    </div>
 
-    <!-- Legal Section -->
-    <div
-      class="flex flex-row xs:gap-10 gap-3.5 justify-center text-center border-t-2 border-background pt-6">
-      <a href="/cookies-policy" class="hover:underline text-xs"
-        >Cookies Policy</a
-      >
-      <a href="/privacy-policy" class="hover:underline text-xs"
-        >Privacy Policy</a
-      >
-      <a href="/terms-of-service" class="hover:underline text-xs"
-        >Terms of Service</a
-      >
+      <!-- Legal Section -->
+      <div
+        class="flex flex-row xs:gap-5 gap-3 justify-center text-center border-t-2 border-background pt-6">
+        {
+          footerData.map((item) => (
+            <a href={item.link} class="hover:underline text-xs">
+              {item.title}
+            </a>
+          ))
+        }
+        <!-- <a class="hover:underline text-xs">Cookies Policy</a>
+        <a class="hover:underline text-xs">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:underline text-xs"
+          >Terms of Service</a
+        > -->
+      </div>
     </div>
   </div>
 </footer>
