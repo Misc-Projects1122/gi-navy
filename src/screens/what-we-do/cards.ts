@@ -72,7 +72,7 @@ export const criticalItemCards = [
     imgSrc: "/assets/structure2.webp",
     altText: "Precision Fabrication Techniques",
     title: "Precision Fabrication Techniques",
-    desc: `At G1, we use advanced techniques, cutting-edge materials, and
+    desc: `At GI, we use advanced techniques, cutting-edge materials, and
             strict quality control to fabricate durable, reliable, and
             high-performance helidecks. Our structures undergo rigorous
             testing for structural integrity and corrosion resistance,
@@ -94,7 +94,7 @@ export const criticalItemCards = [
     imgSrc: "/assets/structure4.webp",
     altText: "Compliance and Certification",
     title: "Compliance and Certification",
-    desc: `We ensure all helidecks designed, fabricated, and installed by G1
+    desc: `We ensure all helidecks designed, fabricated, and installed by GI
             comply with the strictest standards set by relevant authorities,
             including international maritime organizations and naval oversight
             bodies. This commitment underscores our dedication to safety,
@@ -105,7 +105,7 @@ export const criticalItemCards = [
     imgSrc: "/assets/structure5.webp",
     altText: "Continuous Support and Maintenance",
     title: "Continuous Support and Maintenance",
-    desc: `Beyond installation, G1 is committed to ongoing support,
+    desc: `Beyond installation, GI is committed to ongoing support,
             maintenance, and lifecycle management to ensure helideck
             performance and longevity. Our responsive support teams are
             available 24/7 to address emergent needs, conduct inspections, and
