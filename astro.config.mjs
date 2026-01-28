@@ -10,5 +10,15 @@ export default defineConfig({
   output: "server",
   adapter: vercel(),
   site: "https://www.i-forces.tech/",
-  integrations: [tailwind(), mdx(), sitemap(), react()],
+  integrations: [
+    tailwind(),
+    mdx(),
+    sitemap({
+      filter: (page) => {
+        // Exclude the manual sitemap page and API routes
+        return !page.includes("/sitemap") && !page.includes("/api/");
+      },
+    }),
+    react(),
+  ],
 });
